@@ -1,4 +1,4 @@
-import logoMark from "@/assets/logo-cdm-mark-v2.png";
+import logoFull from "@/assets/logo-cdm.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -7,7 +7,14 @@ const Footer = () => (
         {/* Brand */}
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-5">
-            <img src={logoMark} alt="CDM" className="h-10 w-auto brightness-0 invert opacity-80" />
+            <img
+              src={logoFull}
+              alt="Consorzio del Mediterraneo"
+              className="h-10 w-auto object-contain bg-background rounded-md p-1 shrink-0"
+              loading="lazy"
+              width={1024}
+              height={1024}
+            />
             <span className="font-bold text-sm tracking-tight text-background/90 leading-tight">
               CONSORZIO DEL<br />MEDITERRANEO
             </span>
