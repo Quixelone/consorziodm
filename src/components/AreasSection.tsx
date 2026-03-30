@@ -1,154 +1,73 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import infraImg from "@/assets/sector-infrastrutture.jpg";
-import edilImg from "@/assets/sector-edilizia.jpg";
-import impImg from "@/assets/sector-impiantistica.jpg";
+import { motion } from "framer-motion";
+import { Building, Landmark, Cpu, ArrowUpRight } from "lucide-react";
 
-const sectors = [
+const areas = [
   {
-    id: "infrastrutture",
-    label: "Grandi Infrastrutture",
-    shortLabel: "Infrastrutture",
-    img: infraImg,
-    alt: "Cantiere di grandi infrastrutture",
+    icon: Landmark,
+    title: "Grandi Infrastrutture",
     description:
-      "Autostrade, viadotti, gallerie, ponti e opere marittime. Il Consorzio gestisce progetti infrastrutturali di rilevanza nazionale, garantendo conformità normativa e rispetto dei tempi.",
-    stats: [
-      { label: "Progetti completati", value: "32" },
-      { label: "Anni di esperienza", value: "18+" },
-    ],
+      "Autostrade, viadotti, gallerie, ponti e opere marittime. Progetti infrastrutturali di rilevanza nazionale con piena conformità normativa.",
   },
   {
-    id: "edilizia",
-    label: "Edilizia Pubblica",
-    shortLabel: "Edilizia",
-    img: edilImg,
-    alt: "Cantiere di edilizia pubblica",
+    icon: Building,
+    title: "Edilizia Pubblica e Sanitaria",
     description:
-      "Scuole, ospedali, edilizia residenziale pubblica e strutture sportive. Interventi chiavi in mano con elevati standard qualitativi e attenzione alla sostenibilità ambientale.",
-    stats: [
-      { label: "Immobili realizzati", value: "85+" },
-      { label: "MQ costruiti", value: "250K" },
-    ],
+      "Scuole, ospedali, edilizia residenziale pubblica e strutture sportive. Interventi chiavi in mano con attenzione alla sostenibilità.",
   },
   {
-    id: "impiantistica",
-    label: "Impiantistica Complessa",
-    shortLabel: "Impiantistica",
-    img: impImg,
-    alt: "Impianti complessi in costruzione",
+    icon: Cpu,
+    title: "Impiantistica ad Alta Tecnologia",
     description:
-      "Impianti meccanici, elettrici, idraulici e speciali per il settore industriale e civile. Soluzioni integrate progettate per l'efficienza energetica e la sicurezza operativa.",
-    stats: [
-      { label: "Impianti installati", value: "120+" },
-      { label: "Efficienza media", value: "94%" },
-    ],
+      "Impianti meccanici, elettrici, idraulici e speciali. Soluzioni integrate per l'efficienza energetica e la sicurezza operativa.",
   },
 ];
 
-const AreasSection = () => {
-  const [active, setActive] = useState(0);
+const AreasSection = () => (
+  <section id="competenze" className="section-spacing">
+    <div className="section-container">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16 lg:mb-20"
+      >
+        <p className="heading-section mb-4">Aree di intervento</p>
+        <h2 className="heading-lg max-w-lg mx-auto">
+          Competenze Strategiche.
+        </h2>
+      </motion.div>
 
-  return (
-    <section id="aree" className="section-padding bg-navy-deep relative overflow-hidden">
-      {/* Subtle pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'radial-gradient(circle, hsl(var(--gold)) 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }} />
-
-      <div className="container relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="gold-line" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
-              Settori
-            </span>
-          </div>
-          <h2 className="font-serif text-4xl md:text-6xl font-black text-primary-foreground leading-[1.05]">
-            Aree di
-            <span className="text-accent italic"> Intervento.</span>
-          </h2>
-        </motion.div>
-
-        {/* Tab buttons */}
-        <div className="flex flex-wrap gap-3 mb-12" role="tablist" aria-label="Settori di intervento">
-          {sectors.map((s, i) => (
-            <button
-              key={s.id}
-              role="tab"
-              aria-selected={active === i}
-              aria-controls={`panel-${s.id}`}
-              onClick={() => setActive(i)}
-              className={`relative px-6 py-3 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 focus-visible:outline-2 focus-visible:outline-ring ${
-                active === i
-                  ? "bg-accent text-accent-foreground"
-                  : "bg-transparent text-primary-foreground/40 border border-primary-foreground/10 hover:text-primary-foreground/70 hover:border-primary-foreground/20"
-              }`}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {areas.map((area, i) => {
+          const Icon = area.icon;
+          return (
+            <motion.div
+              key={area.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="card-premium p-8 lg:p-10 group cursor-default"
             >
-              <span className="hidden sm:inline">{s.label}</span>
-              <span className="sm:hidden">{s.shortLabel}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={sectors[active].id}
-            id={`panel-${sectors[active].id}`}
-            role="tabpanel"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-5 gap-0 overflow-hidden"
-          >
-            {/* Image - 3 cols */}
-            <div className="lg:col-span-3 relative aspect-[16/10] lg:aspect-auto">
-              <img
-                src={sectors[active].img}
-                alt={sectors[active].alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/30 to-transparent" />
-              <div className="absolute inset-0 bg-accent/10 mix-blend-color" />
-            </div>
-
-            {/* Content - 2 cols */}
-            <div className="lg:col-span-2 bg-card p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="font-serif text-3xl md:text-4xl font-black text-foreground mb-6">
-                {sectors[active].label}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                {sectors[active].description}
-              </p>
-
-              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-border">
-                {sectors[active].stats.map((stat) => (
-                  <div key={stat.label}>
-                    <span className="font-mono-kpi text-3xl font-bold text-accent-foreground">
-                      {stat.value}
-                    </span>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
+              <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-primary/5 transition-colors duration-300">
+                <Icon className="h-6 w-6 text-primary" />
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+
+              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+                {area.title}
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-primary transition-colors" />
+              </h3>
+
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {area.description}
+              </p>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default AreasSection;
