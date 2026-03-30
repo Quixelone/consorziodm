@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import tabConstruction from "@/assets/tab-construction.jpg";
-import tabProjects from "@/assets/tab-projects.jpg";
-import tabContracts from "@/assets/tab-contracts.jpg";
-import tabMaintenance from "@/assets/tab-maintenance.jpg";
 
 const tabs = [
   {
@@ -12,7 +8,7 @@ const tabs = [
     title: "Soluzioni su misura per ogni esigenza",
     description:
       "Il Consorzio offre servizi integrati di progettazione, direzione lavori, sicurezza e gestione commesse. Un unico interlocutore per garantire efficienza, qualità e rispetto delle tempistiche in ogni fase del processo costruttivo.",
-    img: tabConstruction,
+    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/SEZIONE-1-HOME-n.-3-1-1-scaled-uai-900x506.jpg",
   },
   {
     id: "progetti",
@@ -20,7 +16,7 @@ const tabs = [
     title: "Dalla progettazione alla realizzazione",
     description:
       "Gestiamo l'intero ciclo di vita del progetto: dall'analisi di fattibilità alla consegna dell'opera. Il nostro team multidisciplinare garantisce soluzioni innovative e conformi alle normative vigenti per appalti pubblici e privati.",
-    img: tabProjects,
+    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/SEZIONE-1-HOME-n.-2-1-819x1024.jpg",
   },
   {
     id: "esecuzione",
@@ -28,7 +24,7 @@ const tabs = [
     title: "Esecuzione impeccabile, risultati concreti",
     description:
       "Le nostre imprese consorziate operano con i più alti standard qualitativi e di sicurezza. Ogni cantiere è gestito con metodologie avanzate di project management, garantendo il rispetto di budget e cronoprogramma.",
-    img: tabContracts,
+    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/bertholdbrodersen-contract-3031680-1024x683.jpg",
   },
   {
     id: "manutenzione",
@@ -36,7 +32,7 @@ const tabs = [
     title: "Manutenzione programmata e straordinaria",
     description:
       "Offriamo servizi di manutenzione ordinaria e straordinaria per edifici pubblici e privati, impianti tecnologici e infrastrutture. Un approccio proattivo per preservare il valore degli investimenti nel tempo.",
-    img: tabMaintenance,
+    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/dayamay-window-cleaner-4306918-683x1024.jpg",
   },
 ];
 
