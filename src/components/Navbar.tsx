@@ -1,43 +1,15 @@
 import { useState, useEffect } from "react";
 import { Lock, Menu, X } from "lucide-react";
-import logoIcon from "@/assets/logo-cdm-icon.png";
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Chi Siamo", href: "#chi-siamo" },
-  { label: "Competenze", href: "#competenze" },
-  { label: "Lavori", href: "#lavori" },
-  { label: "Certificazioni", href: "#certificazioni" },
-  { label: "Legalità", href: "#legalita" },
-  { label: "Contatti", href: "#contatti" },
-];
-
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-nav border-b border-border/50 shadow-soft" : "bg-transparent"
-      }`}
-      style={scrolled ? { boxShadow: "0 1px 3px rgb(0 0 0 / 0.05)" } : undefined}
-    >
-      <div className="section-container flex items-center justify-between h-[72px]">
+import logoFull from "@/assets/logo-cdm.png";
+...
         <a href="#home" className="flex items-center gap-3 group">
           <img
-            src={logoIcon}
+            src={logoFull}
             alt="Consorzio del Mediterraneo"
-            className="h-10 w-10 rounded-md object-contain bg-background border border-border/40 p-1 shrink-0"
+            className="h-10 w-auto object-contain shrink-0"
             loading="eager"
-            width={180}
-            height={180}
+            width={1024}
+            height={1024}
           />
           <span className="text-[13px] font-bold tracking-tight text-foreground leading-tight">
             CONSORZIO DEL<br />MEDITERRANEO
