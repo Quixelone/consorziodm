@@ -1,143 +1,113 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { Send, MapPin, Mail, Phone } from "lucide-react";
 
 const ContactSection = () => (
-  <section id="contatti" className="section-padding bg-background">
-    <div className="container">
+  <section id="contatti" className="section-spacing bg-surface">
+    <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="max-w-2xl mb-20"
+        className="text-center mb-16"
       >
-        <div className="flex items-center gap-3 mb-6">
-          <div className="gold-line" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
-            Contatti
-          </span>
-        </div>
-        <h2 className="font-serif text-4xl md:text-6xl font-black text-foreground leading-[1.05]">
-          Parliamo del vostro
-          <span className="text-accent italic"> progetto.</span>
+        <p className="heading-section mb-4">Contatti</p>
+        <h2 className="heading-lg max-w-md mx-auto">
+          Parliamo del vostro progetto.
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-        {/* Form - 3 cols */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+        {/* Form */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="lg:col-span-3 bg-card border border-border p-8 md:p-12 space-y-6"
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-3 card-premium p-8 lg:p-10 space-y-5"
           onSubmit={(e) => e.preventDefault()}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="font-bold text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+              <Label htmlFor="name" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Nome e Cognome *
               </Label>
-              <Input
-                id="name"
-                placeholder="Mario Rossi"
-                required
-                className="border-border rounded-sm h-12 focus-visible:ring-accent"
-              />
+              <Input id="name" placeholder="Mario Rossi" required className="rounded-xl h-11 border-border/80" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="company" className="font-bold text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+              <Label htmlFor="company" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Azienda / Ente
               </Label>
-              <Input
-                id="company"
-                placeholder="Comune di Roma"
-                className="border-border rounded-sm h-12 focus-visible:ring-accent"
-              />
+              <Input id="company" placeholder="Comune di Roma" className="rounded-xl h-11 border-border/80" />
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="pec" className="font-bold text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
-              PEC *
+            <Label htmlFor="email" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+              Email / PEC *
             </Label>
-            <Input
-              id="pec"
-              type="email"
-              placeholder="nome@pec.it"
-              required
-              className="border-border rounded-sm h-12 focus-visible:ring-accent"
-            />
+            <Input id="email" type="email" placeholder="nome@pec.it" required className="rounded-xl h-11 border-border/80" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message" className="font-bold text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+            <Label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Messaggio
             </Label>
-            <Textarea
-              id="message"
-              placeholder="Descrivete brevemente la vostra necessità..."
-              rows={5}
-              className="border-border rounded-sm focus-visible:ring-accent resize-none"
-            />
+            <Textarea id="message" placeholder="Descrivete la vostra necessità..." rows={4} className="rounded-xl border-border/80 resize-none" />
           </div>
-          <Button type="submit" className="bg-accent text-accent-foreground hover:bg-gold-light font-bold uppercase text-xs tracking-wider px-8 h-12">
-            <Send className="mr-2 h-4 w-4" />
+          <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
+            <Send className="h-4 w-4" />
             Invia Richiesta
-          </Button>
+          </button>
         </motion.form>
 
-        {/* Info - 2 cols */}
+        {/* Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:col-span-2 bg-primary p-8 md:p-12 flex flex-col"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="lg:col-span-2 space-y-6"
         >
-          <h3 className="font-serif text-2xl font-black text-primary-foreground mb-8">
-            Sede Centrale
-          </h3>
-
-          <div className="space-y-6 flex-1">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-primary-foreground/20 flex items-center justify-center shrink-0">
-                <MapPin className="h-4 w-4 text-accent" aria-hidden="true" />
+          <div className="card-premium p-6">
+            <h3 className="font-bold text-foreground mb-5 text-[15px]">Sede Legale</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                  <MapPin className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Via Dei Mille, 174</p>
+                  <p className="text-sm text-muted-foreground">80121 Napoli (NA)</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-primary-foreground text-sm">Via del Porto, 42</p>
-                <p className="text-primary-foreground/50 text-sm">80133 Napoli (NA), Italia</p>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                  <Phone className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">+39 081 410160</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-primary-foreground/20 flex items-center justify-center shrink-0">
-                <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
-              </div>
-              <div>
-                <p className="font-semibold text-primary-foreground text-sm">PEC</p>
-                <p className="text-primary-foreground/50 text-sm">consorzio@pec.mediterraneo.it</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 border border-primary-foreground/20 flex items-center justify-center shrink-0">
-                <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
-              </div>
-              <div>
-                <p className="font-semibold text-primary-foreground text-sm">Telefono</p>
-                <p className="text-primary-foreground/50 text-sm">+39 081 000 0000</p>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+                  <Mail className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">info@consorziodelmediterraneo.it</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">PEC: consorziodelmediterraneo@pec.it</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-primary-foreground/10">
-            <p className="text-[11px] text-primary-foreground/40 uppercase tracking-wider">
-              P.IVA 01234567890
-            </p>
-            <p className="text-[11px] text-primary-foreground/40 uppercase tracking-wider mt-1">
-              C.F. 01234567890
-            </p>
+          <div className="card-premium p-6">
+            <h3 className="font-bold text-foreground mb-3 text-[15px]">Dati Fiscali</h3>
+            <div className="space-y-1.5 text-sm text-muted-foreground">
+              <p>P.IVA e C.F.: 07445901213</p>
+              <p>REA: NA-884629</p>
+            </div>
           </div>
         </motion.div>
       </div>
