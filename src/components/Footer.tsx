@@ -1,13 +1,13 @@
+import logoIcon from "@/assets/logo-cdm-icon.png";
+
 const Footer = () => (
   <footer className="bg-foreground text-background">
     <div className="section-container py-16 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-8 h-8 rounded-lg bg-background/10 flex items-center justify-center">
-              <span className="font-bold text-xs text-background">CM</span>
-            </div>
+          <div className="flex items-center gap-3 mb-5">
+            <img src={logoIcon} alt="CDM" className="h-10 w-10 rounded-lg bg-background/10 p-1" />
             <span className="font-bold text-sm tracking-tight text-background/90">
               Consorzio del Mediterraneo
             </span>
