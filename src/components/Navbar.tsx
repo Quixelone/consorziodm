@@ -34,7 +34,7 @@ const Navbar = () => {
           <img
             src={logoFull}
             alt="Consorzio del Mediterraneo"
-            className="h-9 w-auto object-contain shrink-0"
+            className="h-12 w-auto object-contain shrink-0"
             loading="eager"
             width={1024}
             height={1024}
