@@ -30,6 +30,7 @@ const Footer = () => (
               { l: "Competenze", h: "#competenze" },
               { l: "Lavori", h: "#lavori" },
               { l: "Certificazioni", h: "#certificazioni" },
+              { l: "Legalità", h: "#legalita" },
               { l: "Contatti", h: "#contatti" },
             ].map((link) => (
               <a key={link.l} href={link.h} className="text-sm text-background/50 hover:text-background transition-colors">

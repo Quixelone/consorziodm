@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Competenze", href: "#competenze" },
   { label: "Lavori", href: "#lavori" },
   { label: "Certificazioni", href: "#certificazioni" },
+  { label: "Legalità", href: "#legalita" },
   { label: "Contatti", href: "#contatti" },
 ];
 
