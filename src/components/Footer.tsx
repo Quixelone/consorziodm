@@ -10,7 +10,7 @@ const Footer = () => (
             <img
               src={logoFull}
               alt="Consorzio del Mediterraneo"
-              className="h-9 w-auto object-contain bg-background/10 rounded-md p-0.5 shrink-0"
+              className="h-12 w-auto object-contain bg-background/10 rounded-md p-0.5 shrink-0"
               loading="lazy"
               width={1024}
               height={1024}
