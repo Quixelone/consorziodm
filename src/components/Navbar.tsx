@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Lock, Menu, X } from "lucide-react";
-import logoFull from "@/assets/logo-cdm.png";
+import logoFull from "@/assets/logo-cdm-full.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -30,23 +30,13 @@ const Navbar = () => {
       style={scrolled ? { boxShadow: "0 1px 3px rgb(0 0 0 / 0.05)" } : undefined}
     >
       <div className="section-container flex items-center justify-between h-[72px]">
-        <a href="#home" className="flex items-center gap-2.5 group min-w-0">
+        <a href="#home" className="flex items-center group min-w-0">
           <img
             src={logoFull}
-            alt="Consorzio del Mediterraneo"
-            className="h-12 w-auto object-contain shrink-0"
+            alt="Consorzio Stabile del Mediterraneo"
+            className="h-14 w-auto object-contain shrink-0"
             loading="eager"
-            width={1024}
-            height={1024}
           />
-          <div className="hidden sm:flex flex-col">
-            <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-foreground leading-none">
-              Consorzio del
-            </span>
-            <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-foreground leading-none mt-[3px]">
-              Mediterraneo
-            </span>
-          </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Navigazione principale">

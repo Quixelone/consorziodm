@@ -1,4 +1,4 @@
-import logoFull from "@/assets/logo-cdm.png";
+import logoFull from "@/assets/logo-cdm-full.jpeg";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -6,23 +6,13 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5 mb-5">
+          <div className="flex items-center mb-5">
             <img
               src={logoFull}
-              alt="Consorzio del Mediterraneo"
-              className="h-12 w-auto object-contain bg-background/10 rounded-md p-0.5 shrink-0"
+              alt="Consorzio Stabile del Mediterraneo"
+              className="h-14 w-auto object-contain shrink-0 brightness-0 invert opacity-80"
               loading="lazy"
-              width={1024}
-              height={1024}
             />
-            <div className="flex flex-col">
-              <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-background/80 leading-none">
-                Consorzio del
-              </span>
-              <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-background/80 leading-none mt-[3px]">
-                Mediterraneo
-              </span>
-            </div>
           </div>
           <p className="text-sm text-background/40 max-w-sm leading-relaxed">
             Consorzio Stabile ai sensi dell'art. 65, comma 2, lett. d) del D.Lgs. 36/2023.
