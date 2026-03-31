@@ -1,4 +1,4 @@
-import logoFull from "@/assets/logo-cdm-full.jpeg";
+import logoNegativo from "@/assets/logo-cdm-negativo.jpeg";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
