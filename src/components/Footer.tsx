@@ -1,4 +1,4 @@
-import logoFull from "@/assets/logo-cdm-full.jpeg";
+import logoNegativo from "@/assets/logo-cdm-negativo.jpeg";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -8,9 +8,9 @@ const Footer = () => (
         <div className="md:col-span-2">
           <div className="flex items-center mb-5">
             <img
-              src={logoFull}
+              src={logoNegativo}
               alt="Consorzio Stabile del Mediterraneo"
-              className="h-14 w-auto object-contain shrink-0 brightness-0 invert"
+              className="h-14 w-auto object-contain shrink-0"
               loading="lazy"
             />
           </div>
