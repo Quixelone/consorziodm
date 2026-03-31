@@ -10,7 +10,7 @@ const Footer = () => (
             <img
               src={logoFull}
               alt="Consorzio Stabile del Mediterraneo"
-              className="h-14 w-auto object-contain shrink-0"
+              className="h-14 w-auto object-contain shrink-0 brightness-0 invert"
               loading="lazy"
             />
           </div>
