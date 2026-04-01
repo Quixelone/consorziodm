@@ -53,6 +53,10 @@ const HeroSection = () => (
             <span className="text-xs font-semibold text-muted-foreground">Consorzio Stabile — D.Lgs. 36/2023</span>
           </div>
 
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            Consorzio Stabile del Mediterraneo
+          </p>
+
           <h1 className="heading-xl mb-6">
             Partner strategico per
             <br />
