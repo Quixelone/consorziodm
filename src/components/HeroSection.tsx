@@ -54,7 +54,7 @@ const HeroSection = () => (
           </div>
 
           <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
-            Consorzio Stabile del Mediterraneo
+            CONSORZIO STABILE DEL MEDITERRANEO S.C.A.R.L.
           </p>
 
           <h1 className="heading-xl mb-6">
