@@ -30,6 +30,9 @@ export const projects: Project[] = [
     slug: "palazzina-russo-ermolli",
     img: projectNapoli,
     gallery: [projectNapoli],
+    beforeAfter: [
+      { before: projectNapoli, after: projectNapoli, caption: "Facciata principale — Consolidamento strutturale e restauro" },
+    ],
     city: "Napoli (NA)",
     title: "Palazzina Russo Ermolli",
     category: "Edilizia Pubblica",
