@@ -1,56 +1,74 @@
 
 
-## Analisi dei Problemi
+# Piano di Evoluzione — Consorzio del Mediterraneo
 
-Dopo aver confrontato il sito attuale con l'originale (consorziodelmediterraneo.it), ecco i problemi individuati:
-
-1. **Logo orribile**: i file PNG generati artificialmente sono di pessima qualità. Vanno sostituiti con il logo reale dal sito originale
-2. **Immagini dei lavori**: placeholder generici invece delle foto reali dei cantieri
-3. **Sezioni mancanti** rispetto all'originale:
-   - Sezione Tabs (Soluzioni Aziendali / Progetti / Esecuzione / Manutenzione) con immagini
-   - Barre di progresso competenze (Impianti Termoidraulici 65%, Impianti Elettrici 80%, Lavori 100%)
-   - Link "Legalità e responsabilità" e "Whistleblowing" nella navigazione
-   - Immagine certificazioni (illustrazione AI presente sul sito originale)
+## Obiettivo
+Trasformare il sito da landing page statica a piattaforma istituzionale orientata a **grandi imprese e PA**, con sezioni Mission/Vision, certificazioni interattive, gallery progetti con pagine dedicate, e comunicazione B2G/B2B professionale.
 
 ---
 
-## Piano di Implementazione
+## 1. Sezione Mission & Vision (nuova)
 
-### 1. Sostituire il logo con quello reale
-- Scaricare il logo originale: `https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/02/cropped-logopulito-2.png`
-- Salvarlo come asset e aggiornare Navbar e Footer
+Creare `MissionVisionSection.tsx` da posizionare dopo "Chi Siamo":
+- **Mission**: "Aggregare competenze e risorse per realizzare opere pubbliche e private di eccellenza, garantendo affidabilità, qualità e rispetto dei tempi."
+- **Vision**: "Diventare il partner di riferimento per le stazioni appaltanti nella realizzazione di infrastrutture strategiche nel Mezzogiorno e in Italia."
+- Layout a 2 colonne con icone (Target per Mission, Eye per Vision), design premium coerente con il resto del sito
+- Tono istituzionale orientato al target PA/grandi imprese
 
-### 2. Usare le foto reali dei lavori
-- Scaricare le 3 immagini dei progetti dal sito originale (Napoli, Imperia, Bologna) e usarle in `ProjectsSection.tsx`
-- Scaricare le immagini della sezione tabs (cantieri, architettura, pulizia vetri, contratti)
+## 2. Certificazioni interattive con link ai documenti
 
-### 3. Aggiungere sezione Tabs mancante
-- Creare una nuova sezione con 4 tab (Soluzioni Aziendali, Progetti, Esecuzione, Manutenzione)
-- Ogni tab ha un testo descrittivo + immagine reale dal sito originale
-- Posizionarla dopo la sezione Certificazioni
+Rielaborare `CertificationsSection.tsx`:
+- Ogni certificazione diventa cliccabile (apre un dialog/modal o link esterno al PDF del certificato reale)
+- Aggiungere immagine dell'attestato SOA (scaricata dal sito originale: `Attestato-uai-1355x1355.png`)
+- Usare un `Dialog` shadcn per mostrare l'immagine del certificato a schermo pieno quando si clicca
+- Prevedere un array con URL ai PDF reali delle certificazioni (da popolare quando disponibili)
 
-### 4. Aggiungere barre di progresso competenze
-- Nella sezione Certificazioni o in una nuova sotto-sezione, aggiungere progress bars animate:
-  - Impianti Termoidraulici: 65%
-  - Impianti Elettrici: 80%
-  - Lavori: 100%
+## 3. Gallery Progetti con pagine dedicate
 
-### 5. Aggiornare navigazione
-- Aggiungere link "Legalità" e "Whistleblowing" nella Navbar e nel Footer
-- Mantenere la struttura esistente
+### 3a. Trasformare `ProjectsSection.tsx` in gallery
+- Ogni card progetto diventa un `<Link>` a `/progetti/:slug`
+- Aggiungere breve descrizione sotto il titolo
+- Bottone "Scopri di più" su ogni card
 
-### 6. Hero image
-- Sostituire il placeholder hero con un'immagine reale dal sito (architettura/cantiere)
+### 3b. Creare pagina progetto `/progetti/:slug`
+- Nuovo file `src/pages/ProjectDetail.tsx`
+- Contenuto: hero image grande, gallery foto (carousel), descrizione lavori, problemi risolti, dati tecnici (committente, importo, durata, categoria SOA)
+- Dati statici in un file `src/data/projects.ts` con array di progetti completi
+- Aggiungere route in `App.tsx`: `/progetti/:slug`
+
+### 3c. Creare pagina archivio `/progetti`
+- `src/pages/Projects.tsx` — griglia di tutti i progetti con filtro per categoria
+- Link "Tutti i progetti" nella sezione homepage porta qui
+
+## 4. Comunicazione B2G / Istituzionale
+
+Interventi trasversali per adeguare il tono al target (stazioni appaltanti, PA, grandi imprese):
+- **Hero**: riformulare headline e copy con linguaggio più istituzionale — enfasi su capacità operativa, garanzie patrimoniali, track record
+- **CTA principali**: "Richiedi Qualificazione" o "Scopri le Nostre Referenze" invece di generici
+- **Sezione Numeri**: aggiungere "Importo lavori eseguiti" e "Classificazione SOA" come KPI
+- **Contact Section**: aggiungere campo "Tipologia Ente" (PA, Impresa Privata, Professionista) nel form
+
+## 5. Routing e Navbar
+
+- Aggiungere `Whistleblowing` come link nella navbar (link esterno o anchor)
+- Aggiungere route `/progetti` e `/progetti/:slug` in `App.tsx`
+- Layout condiviso: Navbar + Footer wrappano tutte le pagine
 
 ---
 
-### File da modificare/creare
-- `src/assets/` — nuovi asset reali (logo, foto progetti, foto tabs)
-- `src/components/Navbar.tsx` — logo reale + link aggiuntivi
-- `src/components/Footer.tsx` — logo reale
-- `src/components/ProjectsSection.tsx` — foto reali
-- `src/components/HeroSection.tsx` — hero image reale
-- `src/components/CertificationsSection.tsx` — aggiungere progress bars
-- `src/components/TabsSection.tsx` — **nuovo** componente tabs
-- `src/pages/Index.tsx` — includere TabsSection
+### File da creare
+- `src/components/MissionVisionSection.tsx`
+- `src/data/projects.ts` — dati completi dei progetti
+- `src/pages/ProjectDetail.tsx` — pagina singolo progetto
+- `src/pages/Projects.tsx` — archivio progetti
+
+### File da modificare
+- `src/pages/Index.tsx` — aggiungere MissionVisionSection
+- `src/components/CertificationsSection.tsx` — certificazioni cliccabili con modal
+- `src/components/ProjectsSection.tsx` — link a pagine progetto
+- `src/components/HeroSection.tsx` — copy istituzionale
+- `src/components/Navbar.tsx` — link Whistleblowing
+- `src/components/NumbersSection.tsx` — KPI aggiuntivi
+- `src/components/ContactSection.tsx` — campo tipologia ente
+- `src/App.tsx` — nuove route
 
