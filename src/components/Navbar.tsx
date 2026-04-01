@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Lock, Menu, X } from "lucide-react";
-import logoFull from "@/assets/logo-cdm-full.jpeg";
+import logoSymbol from "@/assets/logo-cdm-symbol-clean.png";
 
 const navLinks = [
   { label: "Home", hash: "home" },
