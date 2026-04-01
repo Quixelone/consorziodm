@@ -94,7 +94,7 @@ const ContactSection = () => (
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Via Dei Mille, 174</p>
+                  <p className="text-sm font-semibold text-foreground">Via Dei Mille, 40</p>
                   <p className="text-sm text-muted-foreground">80121 Napoli (NA)</p>
                 </div>
               </div>
