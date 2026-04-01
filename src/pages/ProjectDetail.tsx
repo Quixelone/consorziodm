@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Calendar, Euro, Award, Building2 } from "lucide-react";
 import { projects } from "@/data/projects";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
