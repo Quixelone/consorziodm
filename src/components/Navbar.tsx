@@ -77,7 +77,8 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                onClick={() => !l.external && setOpen(false)}
                 className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors"
               >
                 {l.label}
