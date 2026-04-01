@@ -72,6 +72,9 @@ export const projects: Project[] = [
     slug: "caserma-carabinieri-pilastro",
     img: projectBologna,
     gallery: [projectBologna],
+    beforeAfter: [
+      { before: projectBologna, after: projectBologna, caption: "Nuova Caserma — Costruzione ex novo" },
+    ],
     city: "Bologna (BO)",
     title: "Nuova Caserma Carabinieri — Pilastro",
     category: "Edilizia Istituzionale",
