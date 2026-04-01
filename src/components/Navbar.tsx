@@ -26,15 +26,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToHash = (hash: string) => {
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handleNavClick = (hash: string) => {
     setOpen(false);
     if (location.pathname === "/") {
-      // Already on homepage, just scroll
-      const el = document.getElementById(hash);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      scrollToHash(hash);
     } else {
-      // Navigate to homepage with hash
-      navigate("/#" + hash);
+      navigate("/", { replace: false });
+      // Wait for homepage to mount, then scroll
+      setTimeout(() => scrollToHash(hash), 300);
     }
   };
 
@@ -42,10 +46,7 @@ const Navbar = () => {
   useEffect(() => {
     if (location.pathname === "/" && location.hash) {
       const id = location.hash.replace("#", "");
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      setTimeout(() => scrollToHash(id), 300);
     }
   }, [location]);
 
