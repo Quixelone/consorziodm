@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; // v2
 import { useLocation, useNavigate } from "react-router-dom";
 import { Lock, Menu, X } from "lucide-react";
 import logoSymbol from "@/assets/logo-cdm-symbol-clean.png";
