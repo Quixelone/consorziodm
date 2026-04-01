@@ -98,27 +98,15 @@ const Navbar = () => {
       {open && (
         <nav className="lg:hidden glass-nav border-t border-border/30" aria-label="Menu mobile">
           <div className="section-container py-4 flex flex-col gap-1">
-            {navLinks.map((l) =>
-              "external" in l && l.external ? (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors"
-                >
-                  {l.label}
-                </a>
-              ) : (
-                <button
-                  key={l.label}
-                  onClick={() => handleNavClick((l as { hash: string }).hash)}
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors bg-transparent border-none cursor-pointer text-left"
-                >
-                  {l.label}
-                </button>
-              )
-            )}
+            {navLinks.map((l) => (
+              <button
+                key={l.label}
+                onClick={() => handleNavClick(l.hash)}
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors bg-transparent border-none cursor-pointer text-left"
+              >
+                {l.label}
+              </button>
+            ))}
             <button onClick={() => handleNavClick("contatti")} className="btn-primary text-center text-[13px] mt-3 flex items-center justify-center gap-2 cursor-pointer border-none">
               <Lock className="h-3.5 w-3.5" />
               Area Riservata
