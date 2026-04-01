@@ -51,6 +51,9 @@ export const projects: Project[] = [
     slug: "ex-caserma-crespi",
     img: projectImperia,
     gallery: [projectImperia],
+    beforeAfter: [
+      { before: projectImperia, after: projectImperia, caption: "Palazzina Comando — Restauro conservativo" },
+    ],
     city: "Imperia (IM)",
     title: "Ex Caserma Crespi — Palazzina Comando",
     category: "Restauro Istituzionale",
