@@ -67,27 +67,15 @@ const Navbar = () => {
         </button>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Navigazione principale">
-          {navLinks.map((l) =>
-            "external" in l && l.external ? (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <button
-                key={l.label}
-                onClick={() => handleNavClick((l as { hash: string }).hash)}
-                className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 bg-transparent border-none cursor-pointer"
-              >
-                {l.label}
-              </button>
-            )
-          )}
+          {navLinks.map((l) => (
+            <button
+              key={l.label}
+              onClick={() => handleNavClick(l.hash)}
+              className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 bg-transparent border-none cursor-pointer"
+            >
+              {l.label}
+            </button>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
