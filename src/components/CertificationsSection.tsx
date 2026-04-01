@@ -1,43 +1,49 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, ExternalLink, X } from "lucide-react";
+import { CheckCircle2, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+
+import certSoa from "@/assets/cert-soa.png";
+import cert9001 from "@/assets/cert-9001.png";
+import cert14001 from "@/assets/cert-14001.png";
+import cert45001 from "@/assets/cert-45001.png";
+import certUniPdr from "@/assets/cert-uni-pdr.png";
 
 const certifications = [
   {
     name: "Attestazione SOA",
     desc: "Cat. OG1, OG3, OG11 — Classificazione VIII",
-    docUrl: null as string | null,
-    docLabel: "Visualizza Attestato",
+    img: certSoa,
+    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/Attestato-SOA-62365_17_00_CDM.pdf",
   },
   {
     name: "ISO 9001:2015",
     desc: "Sistema di gestione per la qualità",
-    docUrl: null as string | null,
-    docLabel: "Visualizza Certificato",
+    img: cert9001,
+    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/9001_CDM.pdf",
   },
   {
     name: "ISO 14001:2015",
     desc: "Sistema di gestione ambientale",
-    docUrl: null as string | null,
-    docLabel: "Visualizza Certificato",
+    img: cert14001,
+    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/14001_CDM.pdf",
   },
   {
     name: "ISO 45001:2018",
     desc: "Salute e sicurezza sul lavoro",
-    docUrl: null as string | null,
-    docLabel: "Visualizza Certificato",
+    img: cert45001,
+    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/45001_CDM.pdf",
   },
   {
-    name: "SA 8000",
-    desc: "Standard etico e responsabilità sociale",
-    docUrl: null as string | null,
-    docLabel: "Visualizza Certificato",
+    name: "UNI/PdR 125:2022",
+    desc: "Parità di genere",
+    img: certUniPdr,
+    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/Certificato-UNI-PdR-125.pdf",
   },
 ];
 
 const CertificationsSection = () => {
-  const [openDoc, setOpenDoc] = useState<string | null>(null);
+  const [openImg, setOpenImg] = useState<string | null>(null);
 
   return (
     <section id="certificazioni" className="section-spacing">
@@ -74,9 +80,7 @@ const CertificationsSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="card-premium p-5 flex items-start gap-4 cursor-pointer group"
-                onClick={() => {
-                  if (cert.docUrl) setOpenDoc(cert.docUrl);
-                }}
+                onClick={() => setOpenImg(cert.img)}
               >
                 <div className="w-9 h-9 rounded-xl bg-primary/5 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle2 className="h-4.5 w-4.5 text-primary" />
@@ -84,16 +88,21 @@ const CertificationsSection = () => {
                 <div className="flex-1">
                   <h4 className="font-bold text-foreground text-[15px]">{cert.name}</h4>
                   <p className="text-sm text-muted-foreground mt-0.5">{cert.desc}</p>
-                  {cert.docUrl ? (
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary mt-2 group-hover:underline">
+                  <div className="flex items-center gap-4 mt-2">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:underline">
+                      Visualizza Certificato
+                    </span>
+                    <a
+                      href={cert.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors"
+                    >
                       <ExternalLink className="h-3 w-3" />
-                      {cert.docLabel}
-                    </span>
-                  ) : (
-                    <span className="text-xs text-muted-foreground/50 mt-2 block">
-                      Documento in aggiornamento
-                    </span>
-                  )}
+                      Scarica PDF
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -101,15 +110,15 @@ const CertificationsSection = () => {
         </div>
       </div>
 
-      {/* Document viewer dialog */}
-      <Dialog open={!!openDoc} onOpenChange={() => setOpenDoc(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
+      {/* Image viewer dialog */}
+      <Dialog open={!!openImg} onOpenChange={() => setOpenImg(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-2">
           <DialogTitle className="sr-only">Certificazione</DialogTitle>
-          {openDoc && (
+          {openImg && (
             <img
-              src={openDoc}
+              src={openImg}
               alt="Certificazione"
-              className="w-full h-auto"
+              className="w-full h-auto rounded-lg"
             />
           )}
         </DialogContent>
