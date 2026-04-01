@@ -2,10 +2,17 @@ import projectNapoli from "@/assets/project-napoli.jpg";
 import projectImperia from "@/assets/project-imperia.jpg";
 import projectBologna from "@/assets/project-bologna.jpg";
 
+export interface BeforeAfter {
+  before: string;
+  after: string;
+  caption: string;
+}
+
 export interface Project {
   slug: string;
   img: string;
   gallery: string[];
+  beforeAfter: BeforeAfter[];
   city: string;
   title: string;
   category: string;
