@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Lavori", href: "#lavori" },
   { label: "Certificazioni", href: "#certificazioni" },
   { label: "Legalità", href: "#legalita" },
+  { label: "Whistleblowing", href: "https://www.consorziodelmediterraneo.it/whistleblowing", external: true },
   { label: "Contatti", href: "#contatti" },
 ];
 
