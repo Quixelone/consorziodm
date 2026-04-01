@@ -59,9 +59,9 @@ const Navbar = () => {
       <div className="section-container flex items-center justify-between h-[72px]">
         <button onClick={() => handleNavClick("home")} className="flex items-center group min-w-0 cursor-pointer bg-transparent border-none p-0">
           <img
-            src={logoFull}
+            src={logoSymbol}
             alt="Consorzio Stabile del Mediterraneo"
-            className="h-14 w-auto object-contain shrink-0"
+            className="h-10 w-auto object-contain shrink-0"
             loading="eager"
           />
         </button>
