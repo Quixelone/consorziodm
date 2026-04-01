@@ -121,6 +121,30 @@ const ProjectDetail = () => {
               <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
             </motion.div>
 
+            {/* Before & After */}
+            {project.beforeAfter.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="heading-lg mb-3">Prima & Dopo</h2>
+                <p className="text-muted-foreground mb-8">Trascina lo slider per confrontare lo stato dell'opera.</p>
+                <div className="space-y-8">
+                  {project.beforeAfter.map((ba, i) => (
+                    <div key={i}>
+                      <BeforeAfterSlider
+                        beforeImg={ba.before}
+                        afterImg={ba.after}
+                      />
+                      <p className="text-sm text-muted-foreground mt-3 text-center">{ba.caption}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
             {/* Gallery */}
             {project.gallery.length > 1 && (
               <motion.div
