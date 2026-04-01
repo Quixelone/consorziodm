@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Lavori", hash: "lavori" },
   { label: "Certificazioni", hash: "certificazioni" },
   { label: "Legalità", hash: "legalita" },
-  { label: "Whistleblowing", href: "https://www.consorziodelmediterraneo.it/whistleblowing", external: true },
+  
   { label: "Contatti", hash: "contatti" },
 ] as const;
 
@@ -67,27 +67,15 @@ const Navbar = () => {
         </button>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Navigazione principale">
-          {navLinks.map((l) =>
-            "external" in l && l.external ? (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <button
-                key={l.label}
-                onClick={() => handleNavClick((l as { hash: string }).hash)}
-                className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 bg-transparent border-none cursor-pointer"
-              >
-                {l.label}
-              </button>
-            )
-          )}
+          {navLinks.map((l) => (
+            <button
+              key={l.label}
+              onClick={() => handleNavClick(l.hash)}
+              className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 bg-transparent border-none cursor-pointer"
+            >
+              {l.label}
+            </button>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -110,27 +98,15 @@ const Navbar = () => {
       {open && (
         <nav className="lg:hidden glass-nav border-t border-border/30" aria-label="Menu mobile">
           <div className="section-container py-4 flex flex-col gap-1">
-            {navLinks.map((l) =>
-              "external" in l && l.external ? (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors"
-                >
-                  {l.label}
-                </a>
-              ) : (
-                <button
-                  key={l.label}
-                  onClick={() => handleNavClick((l as { hash: string }).hash)}
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors bg-transparent border-none cursor-pointer text-left"
-                >
-                  {l.label}
-                </button>
-              )
-            )}
+            {navLinks.map((l) => (
+              <button
+                key={l.label}
+                onClick={() => handleNavClick(l.hash)}
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors bg-transparent border-none cursor-pointer text-left"
+              >
+                {l.label}
+              </button>
+            ))}
             <button onClick={() => handleNavClick("contatti")} className="btn-primary text-center text-[13px] mt-3 flex items-center justify-center gap-2 cursor-pointer border-none">
               <Lock className="h-3.5 w-3.5" />
               Area Riservata
