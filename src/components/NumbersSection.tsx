@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, Building2, HardHat, Users } from "lucide-react";
+import { TrendingUp, Building2, HardHat, Users, Award } from "lucide-react";
 
 function useCountUp(target: number, duration = 2200) {
   const [count, setCount] = useState(0);
@@ -37,6 +37,7 @@ const NumbersSection = () => {
   const kpi1 = useCountUp(500);
   const kpi2 = useCountUp(15);
   const kpi3 = useCountUp(50);
+  const kpi4 = useCountUp(8);
 
   return (
     <section className="section-spacing bg-surface">
@@ -73,7 +74,7 @@ const NumbersSection = () => {
                 €{kpi1.count}M+
               </p>
               <p className="text-muted-foreground mt-3 text-base leading-relaxed">
-                Valore complessivo delle commesse gestite dal Consorzio
+                Importo complessivo dei lavori eseguiti su scala nazionale
               </p>
             </div>
           </motion.div>
@@ -114,28 +115,33 @@ const NumbersSection = () => {
               <p className="font-mono-kpi text-4xl font-bold text-foreground tracking-tight">
                 {kpi3.count}+
               </p>
-              <p className="text-sm text-muted-foreground mt-2">Cantieri attivi su scala nazionale</p>
+              <p className="text-sm text-muted-foreground mt-2">Cantieri completati su scala nazionale</p>
             </div>
           </motion.div>
 
-          {/* Card 4 - Wide */}
+          {/* Card 4 - SOA Classification */}
           <motion.div
+            ref={kpi4.ref}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="card-premium p-8 md:col-span-2 bg-primary text-primary-foreground hover:bg-primary"
             style={{ boxShadow: "0 4px 24px -4px hsl(217 55% 18% / 0.3)" }}
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-primary-foreground/60 mb-2">Il nostro modello</p>
-                <p className="text-lg font-semibold leading-relaxed max-w-md">
-                  La struttura consortile centralizza la gestione strategica, lasciando alle imprese associate ciò che sanno fare meglio: costruire.
+                <p className="text-sm font-medium text-primary-foreground/60 mb-2">Classificazione SOA</p>
+                <p className="font-mono-kpi text-4xl font-bold mb-2">
+                  Cat. VIII
+                </p>
+                <p className="text-base font-semibold leading-relaxed max-w-md text-primary-foreground/80">
+                  OG1 · OG3 · OG11 — Qualificazione per lavori fino a importo illimitato.
+                  Il massimo livello di affidabilità per le stazioni appaltanti.
                 </p>
               </div>
               <div className="w-10 h-10 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0 ml-4">
-                <Building2 className="h-5 w-5 text-primary-foreground/80" />
+                <Award className="h-5 w-5 text-primary-foreground/80" />
               </div>
             </div>
           </motion.div>

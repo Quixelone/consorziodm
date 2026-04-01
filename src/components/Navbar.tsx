@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Lavori", href: "#lavori" },
   { label: "Certificazioni", href: "#certificazioni" },
   { label: "Legalità", href: "#legalita" },
+  { label: "Whistleblowing", href: "https://www.consorziodelmediterraneo.it/whistleblowing", external: true },
   { label: "Contatti", href: "#contatti" },
 ];
 
@@ -44,6 +45,7 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
+              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
             >
               {l.label}
@@ -75,7 +77,8 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                onClick={() => !l.external && setOpen(false)}
                 className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-colors"
               >
                 {l.label}

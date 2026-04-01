@@ -54,25 +54,25 @@ const HeroSection = () => (
           </div>
 
           <h1 className="heading-xl mb-6">
-            Eccellenza nelle
+            Partner strategico per
             <br />
             <span className="bg-gradient-to-r from-primary to-navy-soft bg-clip-text text-transparent">
-              Grandi Opere.
+              Appalti Pubblici.
             </span>
           </h1>
 
           <p className="body-lg max-w-lg mb-10">
-            Uniamo le migliori realtà imprenditoriali per realizzare infrastrutture
-            strategiche e opere pubbliche con standard di affidabilità assoluti.
+            Capacità operativa, solidità patrimoniale e classificazione SOA VIII:
+            il Consorzio Stabile che le stazioni appaltanti scelgono per le grandi opere.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a href="#chi-siamo" className="btn-primary inline-flex items-center gap-2">
-              Scopri il Consorzio
+            <a href="#contatti" className="btn-primary inline-flex items-center gap-2">
+              Richiedi Qualificazione
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#certificazioni" className="btn-secondary inline-flex items-center gap-2">
-              Certificazioni
+            <a href="#lavori" className="btn-secondary inline-flex items-center gap-2">
+              Scopri le Referenze
             </a>
           </div>
         </motion.div>
