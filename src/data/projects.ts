@@ -2,10 +2,17 @@ import projectNapoli from "@/assets/project-napoli.jpg";
 import projectImperia from "@/assets/project-imperia.jpg";
 import projectBologna from "@/assets/project-bologna.jpg";
 
+export interface BeforeAfter {
+  before: string;
+  after: string;
+  caption: string;
+}
+
 export interface Project {
   slug: string;
   img: string;
   gallery: string[];
+  beforeAfter: BeforeAfter[];
   city: string;
   title: string;
   category: string;
@@ -23,6 +30,9 @@ export const projects: Project[] = [
     slug: "palazzina-russo-ermolli",
     img: projectNapoli,
     gallery: [projectNapoli],
+    beforeAfter: [
+      { before: projectNapoli, after: projectNapoli, caption: "Facciata principale — Consolidamento strutturale e restauro" },
+    ],
     city: "Napoli (NA)",
     title: "Palazzina Russo Ermolli",
     category: "Edilizia Pubblica",
@@ -41,6 +51,9 @@ export const projects: Project[] = [
     slug: "ex-caserma-crespi",
     img: projectImperia,
     gallery: [projectImperia],
+    beforeAfter: [
+      { before: projectImperia, after: projectImperia, caption: "Palazzina Comando — Restauro conservativo" },
+    ],
     city: "Imperia (IM)",
     title: "Ex Caserma Crespi — Palazzina Comando",
     category: "Restauro Istituzionale",
@@ -59,6 +72,9 @@ export const projects: Project[] = [
     slug: "caserma-carabinieri-pilastro",
     img: projectBologna,
     gallery: [projectBologna],
+    beforeAfter: [
+      { before: projectBologna, after: projectBologna, caption: "Nuova Caserma — Costruzione ex novo" },
+    ],
     city: "Bologna (BO)",
     title: "Nuova Caserma Carabinieri — Pilastro",
     category: "Edilizia Istituzionale",
