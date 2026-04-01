@@ -14,7 +14,7 @@ const Footer = () => (
               loading="lazy"
             />
             <span className="text-sm font-semibold tracking-wide text-background">
-              Consorzio Stabile del Mediterraneo
+              Consorzio Stabile del Mediterraneo S.c.a.r.l.
             </span>
           </div>
           <p className="text-sm text-background/40 max-w-sm leading-relaxed">
