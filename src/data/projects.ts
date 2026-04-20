@@ -1,6 +1,12 @@
 import projectNapoli from "@/assets/project-napoli.jpg";
 import projectImperia from "@/assets/project-imperia.jpg";
 import projectBologna from "@/assets/project-bologna.jpg";
+import galleryNapoli1 from "@/assets/gallery-napoli-1.png";
+import galleryNapoli2 from "@/assets/gallery-napoli-2.png";
+import galleryImperia1 from "@/assets/gallery-imperia-1.png";
+import galleryImperia2 from "@/assets/gallery-imperia-2.png";
+import galleryBologna1 from "@/assets/gallery-bologna-1.png";
+import galleryBologna2 from "@/assets/gallery-bologna-2.png";
 
 export interface BeforeAfter {
   before: string;
@@ -8,10 +14,15 @@ export interface BeforeAfter {
   caption: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   img: string;
-  gallery: string[];
+  gallery: GalleryImage[];
   beforeAfter: BeforeAfter[];
   city: string;
   title: string;
@@ -29,7 +40,11 @@ export const projects: Project[] = [
   {
     slug: "palazzina-russo-ermolli",
     img: projectNapoli,
-    gallery: [projectNapoli],
+    gallery: [
+      { src: projectNapoli, caption: "Vista d'insieme — Palazzina Russo Ermolli" },
+      { src: galleryNapoli1, caption: "Consolidamento strutturale della facciata" },
+      { src: galleryNapoli2, caption: "Restauro degli interni — soffitti a volta" },
+    ],
     beforeAfter: [
       { before: projectNapoli, after: projectNapoli, caption: "Facciata principale — Consolidamento strutturale e restauro" },
     ],
@@ -50,7 +65,11 @@ export const projects: Project[] = [
   {
     slug: "ex-caserma-crespi",
     img: projectImperia,
-    gallery: [projectImperia],
+    gallery: [
+      { src: projectImperia, caption: "Ex Caserma Crespi — Palazzina Comando" },
+      { src: galleryImperia1, caption: "Restauro conservativo della facciata" },
+      { src: galleryImperia2, caption: "Dettaglio — Lavorazione cornici in pietra" },
+    ],
     beforeAfter: [
       { before: projectImperia, after: projectImperia, caption: "Palazzina Comando — Restauro conservativo" },
     ],
@@ -71,7 +90,11 @@ export const projects: Project[] = [
   {
     slug: "caserma-carabinieri-pilastro",
     img: projectBologna,
-    gallery: [projectBologna],
+    gallery: [
+      { src: projectBologna, caption: "Nuova Caserma Carabinieri — Vista esterna" },
+      { src: galleryBologna1, caption: "Struttura in costruzione — Facciate vetrate" },
+      { src: galleryBologna2, caption: "Installazione impianto fotovoltaico 45 kW" },
+    ],
     beforeAfter: [
       { before: projectBologna, after: projectBologna, caption: "Nuova Caserma — Costruzione ex novo" },
     ],

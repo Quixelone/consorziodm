@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\Quixel\\\\Downloads\\\\CDM_sito\\\\cansorziodm\" && npm run dev)"
+    ]
+  }
+}

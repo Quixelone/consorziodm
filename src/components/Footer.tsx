@@ -1,4 +1,5 @@
-import logoSymbol from "@/assets/logo-cdm-symbol-clean.png";
+import { Link } from "react-router-dom";
+import logoFull from "@/assets/new-logo.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -6,16 +7,13 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-5">
+          <div className="inline-flex items-center gap-3 mb-5 rounded-2xl bg-white px-4 py-3 shadow-card-soft">
             <img
-              src={logoSymbol}
+              src={logoFull}
               alt="Consorzio Stabile del Mediterraneo"
-              className="h-10 w-auto object-contain shrink-0"
+              className="h-[43px] w-auto object-contain shrink-0"
               loading="lazy"
             />
-            <span className="text-sm font-semibold tracking-wide text-background">
-              Consorzio Stabile del Mediterraneo S.c.a.r.l.
-            </span>
           </div>
           <p className="text-sm text-background/40 max-w-sm leading-relaxed">
             Consorzio Stabile ai sensi dell'art. 65, comma 2, lett. d) del D.Lgs. 36/2023.
@@ -51,7 +49,10 @@ const Footer = () => (
             Legal
           </h4>
           <nav aria-label="Legal" className="flex flex-col gap-2.5">
-            {["Privacy Policy", "Cookie Policy", "Modello 231", "Whistleblowing", "Amm. Trasparente"].map((l) => (
+            <Link to="/privacy" className="text-sm text-background/50 hover:text-background transition-colors">
+              Privacy Policy
+            </Link>
+            {["Cookie Policy", "Modello 231", "Whistleblowing", "Amm. Trasparente"].map((l) => (
               <a key={l} href="#" className="text-sm text-background/50 hover:text-background transition-colors">
                 {l}
               </a>

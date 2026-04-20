@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"; // v2
 import { useLocation, useNavigate } from "react-router-dom";
 import { Lock, Menu, X } from "lucide-react";
-import logoSymbol from "@/assets/logo-cdm-symbol-clean.png";
+import logoFull from "@/assets/new-logo.png";
 
 const navLinks = [
   { label: "Home", hash: "home" },
@@ -60,9 +60,9 @@ const Navbar = () => {
       <div className="section-container flex items-center justify-between h-[72px]">
         <button onClick={() => handleNavClick("home")} className="flex items-center group min-w-0 cursor-pointer bg-transparent border-none p-0">
           <img
-            src={logoSymbol}
+            src={logoFull}
             alt="Consorzio Stabile del Mediterraneo"
-            className="h-10 w-auto object-contain shrink-0"
+            className="h-[43px] w-auto object-contain shrink-0"
             loading="eager"
           />
         </button>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Calendar, Euro, Award, Building2 } from "lucide-react";
 import { projects } from "@/data/projects";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import ProjectGallery from "@/components/ProjectGallery";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -145,30 +146,23 @@ const ProjectDetail = () => {
                 </div>
               </motion.div>
             )}
-
-            {/* Gallery */}
-            {project.gallery.length > 1 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h2 className="heading-lg mb-8">Gallery</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.gallery.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      alt={`${project.title} - foto ${i + 1}`}
-                      className="w-full aspect-[3/2] object-cover rounded-2xl"
-                      loading="lazy"
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            )}
           </div>
+
+          {/* Gallery — full width for maximum visual impact */}
+          {project.gallery.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mt-20 max-w-5xl mx-auto"
+            >
+              <ProjectGallery
+                images={project.gallery}
+                projectTitle={project.title}
+              />
+            </motion.div>
+          )}
         </section>
       </main>
       <Footer />
