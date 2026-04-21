@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="inline-flex items-center gap-3 mb-5 rounded-2xl bg-white px-4 py-3 shadow-card-soft">
+          <div className="inline-flex items-center gap-3 mb-5">
             <img
               src={logoFull}
               alt="Consorzio Stabile del Mediterraneo"
