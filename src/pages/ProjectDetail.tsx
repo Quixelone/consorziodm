@@ -99,6 +99,19 @@ const ProjectDetail = () => {
             >
               <h2 className="heading-lg mb-6">Descrizione del progetto</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
+              {project.documentUrl && (
+                <div className="mt-6">
+                  <a
+                    href={project.documentUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary inline-flex items-center gap-2"
+                  >
+                    {project.documentLabel ?? "Apri documento (PDF)"}
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+              )}
             </motion.div>
 
             <motion.div

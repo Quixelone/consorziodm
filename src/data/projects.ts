@@ -8,6 +8,16 @@ import galleryImperia2 from "@/assets/gallery-imperia-2.png";
 import galleryBologna1 from "@/assets/gallery-bologna-1.png";
 import galleryBologna2 from "@/assets/gallery-bologna-2.png";
 
+// Chiesa San Nicola a Pistaso
+import chiesaNicolaBefore1 from "@/assets/chiesa-nicola-before-1.png";
+import chiesaNicolaBefore2 from "@/assets/chiesa-nicola-before-2.png";
+import chiesaNicolaAfter1 from "@/assets/chiesa-nicola-after-1.png";
+import chiesaNicolaAfter2 from "@/assets/chiesa-nicola-after-2.png";
+import chiesaNicolaAfter3 from "@/assets/chiesa-nicola-after-3.png";
+import chiesaNicolaAfterDetail1 from "@/assets/chiesa-nicola-after-detail-1.png";
+import chiesaNicolaAfterDetail2 from "@/assets/chiesa-nicola-after-detail-2.png";
+import chiesaNicolaWork1 from "@/assets/chiesa-nicola-work-1.png";
+
 export interface BeforeAfter {
   before: string;
   after: string;
@@ -34,9 +44,48 @@ export interface Project {
   description: string;
   challenge: string;
   solution: string;
+  documentUrl?: string;
+  documentLabel?: string;
 }
 
 export const projects: Project[] = [
+  {
+    slug: "chiesa-san-nicola-a-pistaso",
+    img: chiesaNicolaAfter1,
+    gallery: [
+      { src: chiesaNicolaAfter1, caption: "Vista d'insieme — Piazzetta Divino Amore dopo il restauro" },
+      { src: chiesaNicolaAfter2, caption: "Angolo principale della chiesa restaurata" },
+      { src: chiesaNicolaAfter3, caption: "Facciata superiore con finestrone decorato" },
+      { src: chiesaNicolaAfterDetail1, caption: "Cherubino barocco restaurato — Portale principale" },
+      { src: chiesaNicolaAfterDetail2, caption: "Dettaglio cornici e stucchi restaurati" },
+      { src: chiesaNicolaWork1, caption: "Fase di restauro — Consolidamento cornicione" },
+    ],
+    beforeAfter: [
+      {
+        before: chiesaNicolaBefore1,
+        after: chiesaNicolaAfter2,
+        caption: "Facciata principale — Da degrado urbano a restauro conservativo",
+      },
+      {
+        before: chiesaNicolaBefore2,
+        after: chiesaNicolaAfter1,
+        caption: "Lato della chiesa — Risanamento facciate e recupero materici",
+      },
+    ],
+    city: "Napoli (NA)",
+    title: "Chiesa di S. Nicola a Pistaso — Restauro e risanamento conservativo",
+    category: "Restauro Conservativo",
+    soaCategory: "OG2 — Restauro e manutenzione beni tutelati",
+    committente: "Associazione Culturale Miracolo dei Borbone",
+    importo: "€ 313.343,67",
+    durata: "—",
+    description:
+      "Intervento di restauro e risanamento conservativo rientrante nell'ambito di applicazione del Bonus Facciate (L. 160/2019) presso la Chiesa di S. Nicola a Pistaso, Via S. Biagio dei Librai, angolo Vico dei Maiorani e Piazzetta Divino Amore, 84, Napoli.",
+    challenge:
+      "Intervento su bene storico in contesto urbano complesso, con vincoli e necessità di coordinamento tra progettazione, esecuzione e gestione documentale delle lavorazioni. Le facciate presentavano gravi degradi superficiali, graffiti, perdita di intonaco e danni agli stucchi decorativi barocchi.",
+    solution:
+      "General Contractor e impresa affidataria: Consorzio Stabile del Mediterraneo S.c.a r.l. Impresa esecutrice: RCS Costruzioni Srl. Progettazione ed esecuzione dei lavori con focus su conservazione materica e ripristino delle facciate, recupero degli apparati decorativi in stucco (cherubini, cornici, timpani) e trattamento anti-graffiti delle superfici lapidee.",
+  },
   {
     slug: "palazzina-russo-ermolli",
     img: projectNapoli,
