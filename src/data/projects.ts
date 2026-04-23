@@ -8,6 +8,24 @@ import galleryImperia2 from "@/assets/gallery-imperia-2.png";
 import galleryBologna1 from "@/assets/gallery-bologna-1.png";
 import galleryBologna2 from "@/assets/gallery-bologna-2.png";
 
+// Palazzina Russo Ermolli
+import russoErmolliCover from "@/assets/russo-ermolli-cover.jpg";
+import russoErmolliPortale from "@/assets/russo-ermolli-portale.jpg";
+import russoErmolliCornicione from "@/assets/russo-ermolli-cornicione.jpg";
+import russoErmolliTorretta from "@/assets/russo-ermolli-torretta.jpg";
+import russoErmolliIngresso from "@/assets/russo-ermolli-ingresso.jpg";
+import russoErmolliDettaglio from "@/assets/russo-ermolli-dettaglio.jpg";
+import russoErmolliCantiere from "@/assets/russo-ermolli-cantiere.jpg";
+
+// Santuario Giugliano
+import giuglianocover from "@/assets/giugliano-cover.jpg";
+import giuglianoStruttura from "@/assets/giugliano-struttura.jpg";
+import giuglianoOro from "@/assets/giugliano-oro.jpg";
+import giuglianoDecorazione from "@/assets/giugliano-decorazione.jpg";
+import giuglianoCapriate from "@/assets/giugliano-capriate.jpg";
+import giuglianoTettoSmontato from "@/assets/giugliano-tetto-smontato.jpg";
+import giuglianoTeloProtezione from "@/assets/giugliano-telo-protezione.jpg";
+
 // Chiesa San Nicola a Pistaso
 import chiesaNicolaBefore1 from "@/assets/chiesa-nicola-before-1.png";
 import chiesaNicolaBefore2 from "@/assets/chiesa-nicola-before-2.png";
@@ -88,28 +106,30 @@ export const projects: Project[] = [
   },
   {
     slug: "palazzina-russo-ermolli",
-    img: projectNapoli,
+    img: russoErmolliCover,
     gallery: [
-      { src: projectNapoli, caption: "Vista d'insieme — Palazzina Russo Ermolli" },
-      { src: galleryNapoli1, caption: "Consolidamento strutturale della facciata" },
-      { src: galleryNapoli2, caption: "Restauro degli interni — soffitti a volta" },
+      { src: russoErmolliCover, caption: "Vista d'insieme — Palazzina Russo Ermolli, Via Palizzi 50" },
+      { src: russoErmolliPortale, caption: "Portale d'ingresso — Decorazioni liberty restaurate" },
+      { src: russoErmolliCornicione, caption: "Cornicione superiore — Stucchi e decorazioni floreali" },
+      { src: russoErmolliTorretta, caption: "Torretta liberty — Recupero apparati decorativi in stucco" },
+      { src: russoErmolliIngresso, caption: "Ingresso principale — Decorazione ad albero in stucco bianco" },
+      { src: russoErmolliDettaglio, caption: "Dettaglio decorativo — Motivi floreali liberty su fondo rosso" },
+      { src: russoErmolliCantiere, caption: "Fase di cantiere — Ponteggi e allestimento CDM/RCS" },
     ],
-    beforeAfter: [
-      { before: projectNapoli, after: projectNapoli, caption: "Facciata principale — Consolidamento strutturale e restauro" },
-    ],
+    beforeAfter: [],
     city: "Napoli (NA)",
-    title: "Palazzina Russo Ermolli",
-    category: "Edilizia Pubblica",
-    soaCategory: "OG1 — Edifici civili e industriali",
-    committente: "Comune di Napoli",
-    importo: "€ 4.200.000",
-    durata: "24 mesi",
+    title: "Palazzina Russo Ermolli — Restauro e risanamento conservativo",
+    category: "Restauro Conservativo",
+    soaCategory: "OG2 — Restauro e manutenzione beni tutelati",
+    committente: "Condominio Via Palizzi, 50 — «Palazzina Russo Ermolli»",
+    importo: "€ 2.059.000",
+    durata: "—",
     description:
-      "Intervento di ristrutturazione integrale della Palazzina Russo Ermolli, un edificio storico nel cuore di Napoli destinato ad edilizia residenziale pubblica. Il progetto ha previsto il consolidamento strutturale, il rifacimento degli impianti e il restauro delle facciate nel rispetto dei vincoli della Soprintendenza.",
+      "Intervento di restauro e risanamento conservativo rientrante nell'ambito di applicazione del Bonus Facciate (L. 160/2019) presso la Palazzina Russo Ermolli, Via Palizzi 50, Napoli. L'edificio, pregevole esempio di architettura liberty napoletana, è stato oggetto di un accurato intervento di recupero degli apparati decorativi in stucco e del rifacimento delle facciate.",
     challenge:
-      "L'edificio presentava gravi criticità strutturali dovute a decenni di incuria e al sisma del 1980. La presenza di famiglie residenti ha richiesto una pianificazione a fasi per garantire la continuità abitativa durante i lavori.",
+      "Il pregio storico-architettonico dell'edificio — con i suoi ricchi apparati decorativi liberty in stucco, i mosaici e le decorazioni floreali — ha richiesto tecniche di intervento altamente specializzate per il recupero e la reintegrazione degli elementi deteriorati, garantendo la fedeltà all'originale.",
     solution:
-      "Abbiamo implementato un cronoprogramma a fasi alternate, completando il consolidamento strutturale con tecniche di micro-pali e iniezioni di resina, seguiti dal rifacimento impiantistico e dal restauro conservativo delle facciate in tufo. L'intero intervento è stato consegnato con 2 mesi di anticipo.",
+      "General Contractor e impresa affidataria: Consorzio Stabile del Mediterraneo S.c.a r.l. Impresa esecutrice: RCS Costruzioni Srl. L'intervento ha previsto la pulitura e il consolidamento degli stucchi, la reintegrazione delle parti mancanti con malte di calce compatibili, il ripristino cromatico delle facciate e la messa in sicurezza dei cornicioni.",
   },
   {
     slug: "ex-caserma-crespi",
@@ -160,5 +180,32 @@ export const projects: Project[] = [
       "La realizzazione in un quartiere densamente abitato ha richiesto una gestione attenta della logistica di cantiere e del rapporto con la comunità locale. Gli standard NZEB hanno imposto soluzioni impiantistiche avanzate.",
     solution:
       "Il cantiere è stato organizzato con logistica just-in-time per minimizzare l'impatto sul quartiere. L'edificio integra un impianto fotovoltaico da 45 kW, pompe di calore geotermiche e un sistema di ventilazione meccanica controllata, raggiungendo la classe energetica A4.",
+  },
+  {
+    slug: "santuario-annunziata-giugliano",
+    img: giuglianocover,
+    gallery: [
+      { src: giuglianocover, caption: "Montaggio ponteggi sulla copertura — Vista esterna del Santuario" },
+      { src: giuglianoCapriate, caption: "Capriate lignee storiche — Ispezione e consolidamento strutturale" },
+      { src: giuglianoStruttura, caption: "Struttura lignea della copertura — Intervento di messa in sicurezza" },
+      { src: giuglianoTettoSmontato, caption: "Smontaggio manto di copertura — Rimozione tegole e tavolato" },
+      { src: giuglianoTeloProtezione, caption: "Telo di protezione — Copertura provvisionale del tetto" },
+      { src: giuglianoOro, caption: "Dettaglio dorato interno — Elementi decorativi in oro zecchino" },
+      { src: giuglianoDecorazione, caption: "Decorazione dorata — Cornice e cartiglio dell'altare maggiore" },
+    ],
+    beforeAfter: [],
+    city: "Giugliano in Campania (NA)",
+    title: "Santuario di Maria SS. Annunziata — Messa in sicurezza sismica",
+    category: "Restauro Istituzionale",
+    soaCategory: "OG2 — Restauro e manutenzione beni tutelati",
+    committente: "Ministero della Cultura — Soprintendenza ABAP Area Metropolitana di Napoli",
+    importo: "€ 1.000.000",
+    durata: "—",
+    description:
+      "Interventi di messa in sicurezza sismica nei luoghi di culto, torri e campanili — Santuario di Maria SS. Annunziata, Giugliano in Campania (NA). CUP F96J24000100006 — CIG B8D3011899. L'intervento riguarda il consolidamento strutturale della copertura lignea storica e la messa in sicurezza degli elementi architettonici vulnerabili al sisma.",
+    challenge:
+      "Il Santuario presenta una copertura lignea di grande valore storico con capriate originali in condizioni di degrado strutturale. La complessità dell'intervento in un edificio di culto attivo, vincolato dalla Soprintendenza, ha richiesto la progettazione di una copertura provvisionale e un piano di lavoro che minimizzasse l'interruzione delle attività religiose.",
+    solution:
+      "Impresa affidataria ed esecutrice: Consorzio Stabile del Mediterraneo S.c.a r.l. / RCS Costruzioni Srl. È stata realizzata una copertura provvisionale a tunnel per proteggere l'edificio durante i lavori. Le capriate lignee storiche sono state consolidate con connettori metallici e la struttura portante è stata adeguata alle normative sismiche vigenti (NTC 2018), preservando l'integrità materica originale.",
   },
 ];
