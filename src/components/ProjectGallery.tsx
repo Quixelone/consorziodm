@@ -105,12 +105,6 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
                 <ZoomIn className="h-5 w-5 text-white" />
               </div>
             </div>
-            {/* Caption on hover */}
-            {image.caption && (
-              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white text-sm font-medium drop-shadow-lg">{image.caption}</p>
-              </div>
-            )}
             {/* Image counter badge (first image only) */}
             {i === 0 && images.length > 1 && (
               <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-semibold border border-white/10">
@@ -183,7 +177,7 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
                 >
                   <img
                     src={images[activeIndex].src}
-                    alt={images[activeIndex].caption || `${projectTitle} — foto ${activeIndex + 1}`}
+                    alt={`${projectTitle} — foto ${activeIndex + 1}`}
                     className={`max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-transform duration-300 ${
                       isZoomed ? "cursor-zoom-out scale-150" : "cursor-zoom-in"
                     }`}
@@ -204,15 +198,6 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
                 </button>
               )}
             </div>
-
-            {/* Caption */}
-            {images[activeIndex].caption && (
-              <div className="relative z-10 text-center py-3 px-6">
-                <p className="text-white/70 text-sm font-medium">
-                  {images[activeIndex].caption}
-                </p>
-              </div>
-            )}
 
             {/* Thumbnail strip */}
             {images.length > 1 && (

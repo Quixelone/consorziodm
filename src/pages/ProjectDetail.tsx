@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Calendar, Euro, Award, Building2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { projects } from "@/data/projects";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ProjectGallery from "@/components/ProjectGallery";
@@ -62,32 +62,6 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* Info cards */}
-        <section className="section-container -mt-8 relative z-10 mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: Building2, label: "Committente", value: project.committente },
-              { icon: Euro, label: "Importo", value: project.importo },
-              { icon: Calendar, label: "Durata", value: project.durata },
-              { icon: Award, label: "Categoria SOA", value: project.soaCategory },
-            ].map((item) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="card-premium p-5"
-              >
-                <div className="w-9 h-9 rounded-xl bg-primary/5 flex items-center justify-center mb-3">
-                  <item.icon className="h-4 w-4 text-primary" />
-                </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{item.label}</p>
-                <p className="text-sm font-bold text-foreground">{item.value}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
         {/* Content */}
         <section className="section-container pb-24">
           <div className="max-w-3xl mx-auto space-y-12">
@@ -96,48 +70,14 @@ const ProjectDetail = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="pt-10"
             >
-              <h2 className="heading-lg mb-6">Descrizione del progetto</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
-              {project.documentUrl && (
-                <div className="mt-6">
-                  <a
-                    href={project.documentUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-secondary inline-flex items-center gap-2"
-                  >
-                    {project.documentLabel ?? "Apri documento (PDF)"}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </div>
-              )}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="card-premium p-8 bg-destructive/5 border-destructive/20"
-            >
-              <h3 className="text-lg font-bold text-foreground mb-4">🔴 La sfida</h3>
-              <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="card-premium p-8 bg-primary/5 border-primary/20"
-            >
-              <h3 className="text-lg font-bold text-foreground mb-4">✅ La nostra soluzione</h3>
-              <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+              <span className="heading-section block mb-4">Il progetto</span>
+              <p className="body-lg">{project.description}</p>
             </motion.div>
 
             {/* Before & After */}
-            {project.beforeAfter.length > 0 && (
+            {project.beforeAfter.filter(ba => ba.before !== ba.after).length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -147,13 +87,12 @@ const ProjectDetail = () => {
                 <h2 className="heading-lg mb-3">Prima & Dopo</h2>
                 <p className="text-muted-foreground mb-8">Trascina lo slider per confrontare lo stato dell'opera.</p>
                 <div className="space-y-8">
-                  {project.beforeAfter.map((ba, i) => (
+                  {project.beforeAfter.filter(ba => ba.before !== ba.after).map((ba, i) => (
                     <div key={i}>
                       <BeforeAfterSlider
                         beforeImg={ba.before}
                         afterImg={ba.after}
                       />
-                      <p className="text-sm text-muted-foreground mt-3 text-center">{ba.caption}</p>
                     </div>
                   ))}
                 </div>
