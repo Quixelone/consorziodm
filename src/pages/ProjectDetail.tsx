@@ -107,7 +107,7 @@ const ProjectDetail = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mt-20 max-w-5xl mx-auto"
+              className="mt-10 max-w-5xl mx-auto"
             >
               <ProjectGallery
                 images={project.gallery}

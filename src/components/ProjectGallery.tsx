@@ -72,7 +72,7 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
           <Grid3X3 className="h-5 w-5 text-primary" />
         </div>
         <div>
-          <h2 className="heading-lg">Galleria lavori</h2>
+          <h2 className="text-xl font-bold text-foreground">Galleria lavori</h2>
           <p className="text-sm text-muted-foreground mt-0.5">
             {images.length} foto del cantiere e dell'opera completata
           </p>
