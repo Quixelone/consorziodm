@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import heroImg from "@/assets/hero-architecture.jpg";
+import heroImg from "@/assets/hero-architecture.webp";
 
 function useCountUp(target: number, duration = 2200) {
   const [count, setCount] = useState(0);
@@ -96,7 +96,7 @@ const HeroSection = () => (
           </div>
           {/* Floating stats card */}
           <div className="absolute -bottom-6 -left-6 md:-left-10 card-premium p-5 max-w-[200px]">
-            <p className="font-mono-kpi text-3xl font-bold text-foreground">18+</p>
+            <p className="font-mono-kpi text-3xl font-bold text-foreground">14+</p>
             <p className="text-xs text-muted-foreground mt-1">Anni di esperienza nel settore</p>
           </div>
         </motion.div>

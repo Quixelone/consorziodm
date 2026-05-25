@@ -10,7 +10,7 @@ const sections = [
 Consorzio Stabile del Mediterraneo S.c.a r.l.
 P.IVA 07445901213 | REA NA-884629
 
-Per esercitare i propri diritti o per qualsiasi informazione relativa al trattamento dei dati personali, è possibile contattare il Titolare all'indirizzo e-mail: info@consorziodm.it`,
+Per esercitare i propri diritti o per qualsiasi informazione relativa al trattamento dei dati personali, è possibile contattare il Titolare all'indirizzo e-mail: info@consorziodelmediterraneo.it`,
   },
   {
     title: "2. Tipologie di Dati Raccolti",
@@ -64,7 +64,7 @@ Nessun dato è trasferito verso paesi terzi al di fuori dello Spazio Economico E
 • Opposizione: opporsi al trattamento in qualsiasi momento, ove il trattamento sia basato sul legittimo interesse o sul consenso.
 • Revoca del consenso: revocare in qualsiasi momento il consenso prestato, senza pregiudicare la liceità del trattamento precedente.
 
-Per esercitare i propri diritti, l'interessato può inviare richiesta a: info@consorziodm.it
+Per esercitare i propri diritti, l'interessato può inviare richiesta a: info@consorziodelmediterraneo.it
 
 L'interessato ha altresì il diritto di proporre reclamo al Garante per la Protezione dei Dati Personali (www.garanteprivacy.it).`,
   },

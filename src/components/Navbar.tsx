@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"; // v2
 import { useLocation, useNavigate } from "react-router-dom";
-import { Lock, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logoFull from "@/assets/new-logo.png";
 
 const navLinks = [
@@ -82,8 +82,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <button onClick={() => handleNavClick("contatti")} className="hidden md:inline-flex btn-primary text-[13px] items-center gap-2 cursor-pointer border-none">
-            <Lock className="h-3.5 w-3.5" />
-            Area Riservata
+            Contatti
           </button>
 
           <button
@@ -110,8 +109,7 @@ const Navbar = () => {
               </button>
             ))}
             <button onClick={() => handleNavClick("contatti")} className="btn-primary text-center text-[13px] mt-3 flex items-center justify-center gap-2 cursor-pointer border-none">
-              <Lock className="h-3.5 w-3.5" />
-              Area Riservata
+              Contatti
             </button>
           </div>
         </nav>

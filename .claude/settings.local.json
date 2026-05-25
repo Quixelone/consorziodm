@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cd \"C:\\\\Users\\\\Quixel\\\\Downloads\\\\CDM_sito\\\\cansorziodm\" && npm run dev)"
+      "Bash(cd \"C:\\\\Users\\\\Quixel\\\\Downloads\\\\CDM_sito\\\\cansorziodm\" && npm run dev)",
+      "Skill(design-system)",
+      "Bash(cd \"C:\\\\Users\\\\Quixel\\\\Downloads\\\\CDM_sito\\\\cansorziodm\" && node -e \"\nconst { chromium } = require\\('playwright'\\);\n\\(async \\(\\) => {\n  const browser = await chromium.launch\\(\\);\n  const page = await browser.newPage\\(\\);\n  await page.setViewportSize\\({ width: 1440, height: 900 }\\);\n  \n  // Test image URL directly - with and without encoding\n  const resp = await page.goto\\('http://localhost:5525/01 pilastro/01.jpeg', { waitUntil: 'domcontentloaded' }\\);\n  console.log\\('space:', resp?.status\\(\\)\\);\n  \n  const resp2 = await page.goto\\('http://localhost:5525/01%20pilastro/01.jpeg', { waitUntil: 'domcontentloaded' }\\);\n  console.log\\('encoded:', resp2?.status\\(\\)\\);\n  \n  await browser.close\\(\\);\n}\\)\\(\\);\n\" 2>&1)",
+      "mcp__claude_ai_Google_Drive__search_files",
+      "mcp__claude_ai_Google_Drive__download_file_content"
     ]
   }
 }

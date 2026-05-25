@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Scale, AlertTriangle, FileText, ExternalLink } from "lucide-react";
+import { Scale, AlertTriangle, FileText } from "lucide-react";
 
 const legalItems = [
   {
@@ -48,15 +48,14 @@ const LegalitySection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card-premium p-8 lg:p-10 group cursor-pointer"
+              className="card-premium p-8 lg:p-10"
             >
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-primary/5 transition-colors duration-300">
                 <Icon className="h-6 w-6 text-primary" />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-foreground mb-3">
                 {item.title}
-                <ExternalLink className="h-4 w-4 text-muted-foreground/40 group-hover:text-primary transition-colors" />
               </h3>
 
               <p className="text-sm text-muted-foreground leading-relaxed">

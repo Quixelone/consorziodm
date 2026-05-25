@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-import certSoa from "@/assets/cert-soa.png";
-import cert9001 from "@/assets/cert-9001.png";
-import cert14001 from "@/assets/cert-14001.png";
-import cert45001 from "@/assets/cert-45001.png";
-import certUniPdr from "@/assets/cert-uni-pdr.png";
+import certSoa from "@/assets/cert-soa.webp";
+import cert9001 from "@/assets/cert-9001.webp";
+import cert14001 from "@/assets/cert-14001.webp";
+import cert45001 from "@/assets/cert-45001.webp";
+import certUniPdr from "@/assets/cert-uni-pdr.webp";
 
 const certifications = [
   {

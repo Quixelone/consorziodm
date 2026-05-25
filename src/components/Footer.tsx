@@ -53,9 +53,9 @@ const Footer = () => (
               Privacy Policy
             </Link>
             {["Cookie Policy", "Modello 231", "Whistleblowing", "Amm. Trasparente"].map((l) => (
-              <a key={l} href="#" className="text-sm text-background/50 hover:text-background transition-colors">
+              <span key={l} className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
                 {l}
-              </a>
+              </span>
             ))}
           </nav>
         </div>

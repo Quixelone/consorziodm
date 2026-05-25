@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { label: "Impianti Termoidraulici", value: 65 },
+  { label: "Impianti Termoidraulici", value: 67 },
   { label: "Impianti Elettrici", value: 80 },
   { label: "Lavori Edili e Infrastrutturali", value: 100 },
 ];

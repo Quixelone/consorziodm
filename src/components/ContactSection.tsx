@@ -1,10 +1,38 @@
+import type { FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send, MapPin, Mail, Phone } from "lucide-react";
 
-const ContactSection = () => (
+const CONTACT_EMAIL = "info@consorziodelmediterraneo.it";
+
+const ContactSection = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+    const name = String(form.get("name") || "");
+    const company = String(form.get("company") || "");
+    const entityType = String(form.get("entityType") || "");
+    const email = String(form.get("email") || "");
+    const message = String(form.get("message") || "");
+    const body = [
+      `Nome e Cognome: ${name}`,
+      `Azienda / Ente: ${company || "-"}`,
+      `Tipologia Ente: ${entityType || "-"}`,
+      `Email / PEC: ${email}`,
+      "",
+      "Messaggio:",
+      message || "-",
+    ].join("\n");
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      "Richiesta dal sito Consorzio Stabile del Mediterraneo",
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
+  return (
   <section id="contatti" className="section-spacing bg-surface">
     <div className="section-container">
       <motion.div
@@ -28,20 +56,20 @@ const ContactSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="lg:col-span-3 card-premium p-8 lg:p-10 space-y-5"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Nome e Cognome *
               </Label>
-              <Input id="name" placeholder="Mario Rossi" required className="rounded-xl h-11 border-border/80" />
+              <Input id="name" name="name" placeholder="Mario Rossi" required className="rounded-xl h-11 border-border/80" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="company" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Azienda / Ente
               </Label>
-              <Input id="company" placeholder="Comune di Roma" className="rounded-xl h-11 border-border/80" />
+              <Input id="company" name="company" placeholder="Comune di Roma" className="rounded-xl h-11 border-border/80" />
             </div>
           </div>
           <div className="space-y-2">
@@ -50,6 +78,7 @@ const ContactSection = () => (
             </Label>
             <select
               id="entity-type"
+              name="entityType"
               className="flex h-11 w-full rounded-xl border border-border/80 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <option value="">Seleziona tipologia...</option>
@@ -64,13 +93,13 @@ const ContactSection = () => (
             <Label htmlFor="email" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Email / PEC *
             </Label>
-            <Input id="email" type="email" placeholder="nome@pec.it" required className="rounded-xl h-11 border-border/80" />
+            <Input id="email" name="email" type="email" placeholder="nome@pec.it" required className="rounded-xl h-11 border-border/80" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Messaggio
             </Label>
-            <Textarea id="message" placeholder="Descrivete la vostra necessità..." rows={4} className="rounded-xl border-border/80 resize-none" />
+            <Textarea id="message" name="message" placeholder="Descrivete la vostra necessità..." rows={4} className="rounded-xl border-border/80 resize-none" />
           </div>
           <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
             <Send className="h-4 w-4" />
@@ -111,7 +140,7 @@ const ContactSection = () => (
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">info@consorziodelmediterraneo.it</p>
+                  <p className="text-sm font-semibold text-foreground">{CONTACT_EMAIL}</p>
                   <p className="text-xs text-muted-foreground mt-0.5">PEC: consorziodelmediterraneo@pec.it</p>
                 </div>
               </div>
@@ -129,6 +158,7 @@ const ContactSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default ContactSection;

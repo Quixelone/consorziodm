@@ -35,7 +35,7 @@ function useCountUp(target: number, duration = 2200) {
 
 const NumbersSection = () => {
   const kpi1 = useCountUp(600);
-  const kpi2 = useCountUp(60);
+  const kpi2 = useCountUp(37);
   const kpi3 = useCountUp(150);
   const kpi4 = useCountUp(8);
 
@@ -133,10 +133,10 @@ const NumbersSection = () => {
               <div>
                 <p className="text-sm font-medium text-primary-foreground/60 mb-2">Classificazione SOA</p>
                 <p className="font-mono-kpi text-4xl font-bold mb-2">
-                  Cat. VIII
+                  Cat. OG1-OG3-OG12 classifica VIII
                 </p>
                 <p className="text-base font-semibold leading-relaxed max-w-md text-primary-foreground/80">
-                  OG1 · OG3 · OG11 — Qualificazione per lavori fino a importo illimitato.
+                  Qualificazione per lavori fino a importo illimitato.
                   Il massimo livello di affidabilità per le stazioni appaltanti.
                 </p>
               </div>

@@ -21,7 +21,6 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
     setActiveIndex(index);
     setLightboxOpen(true);
     setIsZoomed(false);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
@@ -43,13 +42,17 @@ const ProjectGallery = ({ images, projectTitle }: ProjectGalleryProps) => {
   // Keyboard navigation
   useEffect(() => {
     if (!lightboxOpen) return;
+    document.body.style.overflow = "hidden";
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
   }, [lightboxOpen, goNext, goPrev]);
 
   if (images.length === 0) return null;
