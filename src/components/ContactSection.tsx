@@ -33,7 +33,7 @@ const ContactSection = () => {
   };
 
   return (
-  <section id="contatti" className="section-spacing bg-surface">
+  <section id="contatti" className="section-spacing">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

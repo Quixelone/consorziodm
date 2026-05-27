@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import NumbersSection from "@/components/NumbersSection";
+import PillarsSection from "@/components/PillarsSection";
 import AboutSection from "@/components/AboutSection";
 import MissionVisionSection from "@/components/MissionVisionSection";
 import AreasSection from "@/components/AreasSection";
@@ -9,6 +10,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import LegalitySection from "@/components/LegalitySection";
+import WhistleblowingSection from "@/components/WhistleblowingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +20,7 @@ const Index = () => (
     <main>
       <HeroSection />
       <NumbersSection />
+      <PillarsSection />
       <AboutSection />
       <MissionVisionSection />
       <AreasSection />
@@ -26,6 +29,7 @@ const Index = () => (
       <SkillsSection />
       <CertificationsSection />
       <LegalitySection />
+      <WhistleblowingSection />
       <ContactSection />
     </main>
     <Footer />

@@ -35,72 +35,85 @@ function useCountUp(target: number, duration = 2200) {
 }
 
 const HeroSection = () => (
-  <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36 overflow-hidden">
-    {/* Subtle gradient bg */}
-    <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/40" />
-    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/30 to-transparent" />
+  <section id="home" className="relative min-h-[90dvh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    {/* Background texture */}
+    <div className="absolute inset-0 bg-dot-pattern opacity-40" />
+    <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
     <div className="section-container relative">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-        {/* Text */}
+      <div className="max-w-4xl">
+        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border/60 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/5 border border-primary/10">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            <span className="text-xs font-semibold text-muted-foreground">Consorzio Stabile — D.Lgs. 36/2023</span>
-          </div>
-
-          <h1 className="heading-xl mb-6">
-            Partner strategico per
-            <br />
-            <span className="bg-gradient-to-r from-primary to-navy-soft bg-clip-text text-transparent">
-              Appalti Pubblici.
-            </span>
-          </h1>
-
-          <p className="body-lg max-w-lg mb-10">
-            Capacità operativa, solidità patrimoniale e classificazione SOA VIII:
-            il Consorzio Stabile che le stazioni appaltanti scelgono per le grandi opere.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a href="#contatti" className="btn-primary inline-flex items-center gap-2">
-              Richiedi Qualificazione
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href="#lavori" className="btn-secondary inline-flex items-center gap-2">
-              Scopri le Referenze
-            </a>
+            <span className="text-xs font-medium text-primary">Consorzio Stabile — D.Lgs. 36/2023</span>
           </div>
         </motion.div>
 
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+        {/* Main heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="heading-xl mb-8"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-            <img
-              src={heroImg}
-              alt="Architettura moderna e infrastrutture"
-              className="w-full aspect-[4/3] object-cover"
-              width={1024}
-              height={1024}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
-          </div>
-          {/* Floating stats card */}
-          <div className="absolute -bottom-6 -left-6 md:-left-10 card-premium p-5 max-w-[200px]">
-            <p className="font-mono-kpi text-3xl font-bold text-foreground">14+</p>
-            <p className="text-xs text-muted-foreground mt-1">Anni di esperienza nel settore</p>
-          </div>
+          Partner strategico per
+          <br />
+          <span className="text-primary">Appalti Pubblici.</span>
+        </motion.h1>
+
+        {/* Subtext */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="body-lg max-w-2xl mb-10 text-balance"
+        >
+          Capacità operativa, solidità patrimoniale e classificazione SOA VIII:
+          il Consorzio Stabile che le stazioni appaltanti scelgono per le grandi opere.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap gap-4"
+        >
+          <a href="#contatti" className="btn-primary inline-flex items-center gap-2">
+            Richiedi Qualificazione
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href="#lavori" className="btn-secondary inline-flex items-center gap-2">
+            Scopri le Referenze
+          </a>
         </motion.div>
       </div>
+
+      {/* Stats bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+        className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-8 border-t border-border/50"
+      >
+        {[
+          { value: "€100M+", label: "Lavori eseguiti" },
+          { value: "37", label: "Imprese partner" },
+          { value: "50+", label: "Cantieri completati" },
+          { value: "VIII", label: "Classificazione SOA" },
+        ].map((stat, i) => (
+          <div key={stat.label}>
+            <p className="font-mono-kpi text-2xl md:text-3xl font-bold text-foreground tracking-tight">{stat.value}</p>
+            <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </motion.div>
     </div>
   </section>
 );

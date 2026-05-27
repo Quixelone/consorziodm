@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 import logoFull from "@/assets/new-logo.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
     <div className="section-container py-16 lg:py-20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
         {/* Brand */}
-        <div className="md:col-span-2">
+        <div className="lg:col-span-2">
           <div className="inline-flex items-center gap-3 mb-5">
             <img
               src={logoFull}
@@ -15,10 +16,24 @@ const Footer = () => (
               loading="lazy"
             />
           </div>
-          <p className="text-sm text-background/40 max-w-sm leading-relaxed">
+          <p className="text-sm text-background/40 max-w-sm leading-relaxed mb-6">
             Consorzio Stabile ai sensi dell'art. 65, comma 2, lett. d) del D.Lgs. 36/2023.
             Aggregazione strategica di imprese leader nel settore delle costruzioni e delle infrastrutture.
           </p>
+          <div className="space-y-3">
+            <a href="mailto:info@consorziodelmediterraneo.it" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
+              <Mail className="h-4 w-4 text-background/30" />
+              info@consorziodelmediterraneo.it
+            </a>
+            <a href="tel:+390811234567" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
+              <Phone className="h-4 w-4 text-background/30" />
+              +39 081 123 4567
+            </a>
+            <div className="flex items-start gap-3 text-sm text-background/50">
+              <MapPin className="h-4 w-4 text-background/30 mt-0.5 shrink-0" />
+              <span>Napoli, Italia</span>
+            </div>
+          </div>
         </div>
 
         {/* Nav */}
@@ -52,11 +67,17 @@ const Footer = () => (
             <Link to="/privacy" className="text-sm text-background/50 hover:text-background transition-colors">
               Privacy Policy
             </Link>
-            {["Cookie Policy", "Modello 231", "Whistleblowing", "Amm. Trasparente"].map((l) => (
+            {["Cookie Policy", "Modello 231"].map((l) => (
               <span key={l} className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
                 {l}
               </span>
             ))}
+            <a href="#whistleblowing" className="text-sm text-background/50 hover:text-background transition-colors">
+              Whistleblowing
+            </a>
+            <span className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
+              Amm. Trasparente
+            </span>
           </nav>
         </div>
       </div>

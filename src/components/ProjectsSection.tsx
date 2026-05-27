@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 
 const ProjectsSection = () => (
-  <section id="lavori" className="section-spacing bg-surface">
+  <section id="lavori" className="section-spacing">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

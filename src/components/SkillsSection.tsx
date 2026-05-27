@@ -64,7 +64,7 @@ const SkillBar = ({ label, target, delay }: { label: string; target: number; del
 };
 
 const SkillsSection = () => (
-  <section className="section-spacing bg-surface">
+  <section className="section-spacing">
     <div className="section-container">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <motion.div

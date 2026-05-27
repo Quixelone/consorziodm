@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -43,6 +43,7 @@
     --slate-text: 215 13% 40%;
 
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
     --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
@@ -65,13 +66,23 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.15);
+    color: hsl(var(--foreground));
   }
 }
 
@@ -81,15 +92,23 @@
   }
 
   .section-spacing {
-    @apply py-24 md:py-32 lg:py-40;
+    @apply py-20 md:py-28 lg:py-36;
   }
 
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] text-foreground;
+    @apply text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground;
+    font-family: var(--font-heading);
+    letter-spacing: -0.04em;
+    line-height: 1.0;
+    text-wrap: balance;
   }
 
   .heading-lg {
-    @apply text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.15] text-foreground;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground;
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-wrap: balance;
   }
 
   .heading-section {
@@ -101,13 +120,15 @@
   }
 
   .card-premium {
-    @apply bg-card rounded-2xl border border-border/60 transition-all duration-300;
+    @apply bg-card rounded-2xl transition-all duration-300;
     box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border) / 0.5);
   }
 
   .card-premium:hover {
     box-shadow: var(--shadow-elevated);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
   .glass-nav {
@@ -125,6 +146,10 @@
     @apply opacity-90;
     box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
     transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
   }
 
   .btn-secondary {
@@ -159,5 +184,10 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--muted-foreground) / 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }

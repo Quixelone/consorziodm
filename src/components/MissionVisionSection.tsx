@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Eye } from "lucide-react";
 
 const MissionVisionSection = () => (
-  <section className="section-spacing">
+  <section className="section-spacing bg-surface">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
