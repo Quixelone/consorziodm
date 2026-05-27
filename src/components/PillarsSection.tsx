@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
-import { Shield, Award, Map, Zap } from "lucide-react";
+import { Network, Shield, Award, Zap } from "lucide-react";
 
 const pillars = [
   {
+    icon: Network,
+    title: "Rete integrata",
+    description: "37 imprese consorziate su tutto il territorio nazionale, con competenze complementari e copertura capillare per ogni tipo di commessa.",
+  },
+  {
     icon: Shield,
-    kpi: "€100M+",
-    title: "Solidità Patrimoniale",
-    description: "Importo complessivo dei lavori eseguiti su scala nazionale, garanzia di capacità economica e finanziaria.",
+    title: "Modello organizzativo",
+    description: "Gestione centralizzata delle commesse con supporto amministrativo, strategico e operativo dedicato a ogni stazione appaltante.",
   },
   {
     icon: Award,
-    kpi: "Cl. VIII",
-    title: "Classificazione SOA",
-    description: "Qualificazione per importo illimitato — il massimo livello riconosciuto per i lavori pubblici in Italia.",
-  },
-  {
-    icon: Map,
-    kpi: "37",
-    title: "Rete Nazionale",
-    description: "Imprese consorziate su tutto il territorio nazionale, copertura capillare per ogni tipo di commessa.",
+    title: "Qualificazione massima",
+    description: "Classificazione SOA in categorie OG1, OG3, OG11 — il livello più alto per partecipare ad appalti di importo illimitato.",
   },
   {
     icon: Zap,
-    kpi: "50+",
-    title: "Efficienza Operativa",
-    description: "Cantieri completati con successo, rispettando cronoprogrammi e budget definiti dalle stazioni appaltanti.",
+    title: "Efficienza operativa",
+    description: "Cronoprogrammi rispettati, budget controllati e standard qualitativi elevati in ogni cantiere gestito dal Consorzio.",
   },
 ];
 
 const PillarsSection = () => (
-  <section className="section-spacing">
+  <section className="section-spacing bg-surface">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -61,7 +57,6 @@ const PillarsSection = () => (
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-mono-kpi text-3xl font-bold text-primary tracking-tight mb-2">{p.kpi}</p>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{p.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
                 </div>

@@ -13,7 +13,7 @@ const HeroSection = () => (
         width={1920}
         height={1080}
       />
-      {/* Dark overlay - più scuro in basso per leggibilità */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
     </div>
 
@@ -73,31 +73,6 @@ const HeroSection = () => (
           </a>
         </motion.div>
       </div>
-
-      {/* Stats bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.5 }}
-        className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-8 border-t border-white/10"
-      >
-        {[
-          { value: "€100M+", label: "Lavori eseguiti" },
-          { value: "37", label: "Imprese partner" },
-          { value: "50+", label: "Cantieri completati" },
-          { value: "VIII", label: "Classificazione SOA" },
-        ].map((stat) => (
-          <div key={stat.label}>
-            <p
-              className="text-2xl md:text-3xl font-bold text-white tracking-tight"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              {stat.value}
-            </p>
-            <p className="text-sm text-white/50 mt-1">{stat.label}</p>
-          </div>
-        ))}
-      </motion.div>
     </div>
   </section>
 );
