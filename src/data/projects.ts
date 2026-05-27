@@ -319,4 +319,26 @@ export const projects: Project[] = [
     challenge: "",
     solution: "",
   },
+  {
+    slug: "abbattimento-vele-scampia",
+    img: "/11 Vele Scampia/01.webp",
+    gallery: [
+      { src: "/11 Vele Scampia/01.webp", caption: "Vela H — Fase di abbattimento controllato" },
+      { src: "/11 Vele Scampia/02.webp", caption: "Demolizione — Lavori in corso con mezzi meccanici" },
+      { src: "/11 Vele Scampia/03.webp", caption: "Vista d’insieme — Avanzamento della demolizione" },
+      { src: "/11 Vele Scampia/04.webp", caption: "Area cantiere — Gestione materiali di risulta" },
+    ],
+    beforeAfter: [],
+    city: "Napoli (NA)",
+    title: "Abbattimento Vele di Scampia — Demolizione controllata e bonifica",
+    category: "Demolizione",
+    soaCategory: "OG1 — Edifici civili e industriali",
+    committente: "Comune di Napoli",
+    importo: "—",
+    durata: "—",
+    description:
+      "Lavori di demolizione controllata delle Vele di Scampia — complesso di edilizia residenziale pubblica nel quartiere Scampia di Napoli. Intervento di abbattimento, bonifica e smaltimento dei materiali di risulta.",
+    challenge: "",
+    solution: "",
+  },
 ];

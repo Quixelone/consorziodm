@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ExternalLink } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 import certSoa from "@/assets/cert-soa.webp";
 import cert9001 from "@/assets/cert-9001.webp";
@@ -14,31 +14,31 @@ const certifications = [
     name: "Attestazione SOA",
     desc: "Cat. OG1, OG3, OG11 — Classificazione VIII",
     img: certSoa,
-    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/Attestato-SOA-62365_17_00_CDM.pdf",
+    pdfUrl: "/certificati/cert-soa.pdf",
   },
   {
     name: "ISO 9001:2015",
     desc: "Sistema di gestione per la qualità",
     img: cert9001,
-    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/9001_CDM.pdf",
+    pdfUrl: "/certificati/cert-9001.pdf",
   },
   {
     name: "ISO 14001:2015",
     desc: "Sistema di gestione ambientale",
     img: cert14001,
-    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/14001_CDM.pdf",
+    pdfUrl: "/certificati/cert-14001.pdf",
   },
   {
     name: "ISO 45001:2018",
     desc: "Salute e sicurezza sul lavoro",
     img: cert45001,
-    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/45001_CDM.pdf",
+    pdfUrl: "/certificati/cert-45001.pdf",
   },
   {
     name: "UNI/PdR 125:2022",
     desc: "Parità di genere",
     img: certUniPdr,
-    pdfUrl: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/Certificato-UNI-PdR-125.pdf",
+    pdfUrl: "/certificati/cert-uni-pdr.pdf",
   },
 ];
 
@@ -112,8 +112,7 @@ const CertificationsSection = () => {
 
       {/* Image viewer dialog */}
       <Dialog open={!!openImg} onOpenChange={() => setOpenImg(null)}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-2">
-          <DialogTitle className="sr-only">Certificazione</DialogTitle>
+        <DialogContent className="max-w-4xl max-h-[90vh] p-2 overflow-auto">
           {openImg && (
             <img
               src={openImg}
