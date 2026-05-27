@@ -61,6 +61,27 @@ const AboutSection = () => (
             Ogni impresa è parte di una comunità che mette in rete competenze, passione
             e visione, trasformando ogni spazio in un luogo da vivere.
           </p>
+
+          {/* Numbers inline */}
+          <div className="grid grid-cols-2 gap-4 mb-8 p-5 rounded-2xl bg-secondary/50 border border-border/50">
+            <div>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>€100M+</p>
+              <p className="text-xs text-muted-foreground mt-1">Lavori eseguiti</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>37</p>
+              <p className="text-xs text-muted-foreground mt-1">Imprese consorziate</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>50+</p>
+              <p className="text-xs text-muted-foreground mt-1">Cantieri completati</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>VIII</p>
+              <p className="text-xs text-muted-foreground mt-1">Classificazione SOA</p>
+            </div>
+          </div>
+
           <p className="text-muted-foreground leading-relaxed mb-10">
             La nostra forza non risiede solo nei numeri, ma nel modello organizzativo:
             il Consorzio centralizza la gestione amministrativa e strategica delle commesse,
