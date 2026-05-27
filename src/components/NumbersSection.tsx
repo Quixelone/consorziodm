@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, Building2, HardHat, Users, Award } from "lucide-react";
+import { TrendingUp, HardHat, Users, Award } from "lucide-react";
 
 function useCountUp(target: number, duration = 2200) {
   const [count, setCount] = useState(0);
@@ -34,10 +34,9 @@ function useCountUp(target: number, duration = 2200) {
 }
 
 const NumbersSection = () => {
-  const kpi1 = useCountUp(600);
+  const kpi1 = useCountUp(100);
   const kpi2 = useCountUp(37);
-  const kpi3 = useCountUp(150);
-  const kpi4 = useCountUp(8);
+  const kpi3 = useCountUp(50);
 
   return (
     <section className="section-spacing bg-surface">
@@ -121,7 +120,6 @@ const NumbersSection = () => {
 
           {/* Card 4 - SOA Classification */}
           <motion.div
-            ref={kpi4.ref}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -131,13 +129,13 @@ const NumbersSection = () => {
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-primary-foreground/60 mb-2">Classificazione SOA</p>
-                <p className="font-mono-kpi text-4xl font-bold mb-2">
-                  Cat. OG1-OG3-OG12 classifica VIII
+                <p className="text-sm font-medium text-primary-foreground/60 mb-3">Classificazione SOA</p>
+                <p className="font-mono-kpi text-5xl md:text-6xl font-bold tracking-tight mb-3">
+                  Classifica VIII
                 </p>
-                <p className="text-base font-semibold leading-relaxed max-w-md text-primary-foreground/80">
-                  Qualificazione per lavori fino a importo illimitato.
-                  Il massimo livello di affidabilità per le stazioni appaltanti.
+                <p className="text-base leading-relaxed max-w-md text-primary-foreground/80">
+                  Qualificazione per importo illimitato — il massimo livello riconosciuto
+                  per i lavori pubblici in Italia.
                 </p>
               </div>
               <div className="w-10 h-10 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0 ml-4">
