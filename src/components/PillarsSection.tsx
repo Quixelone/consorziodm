@@ -5,22 +5,22 @@ const pillars = [
   {
     icon: Network,
     title: "Rete integrata",
-    description: "37 imprese consorziate su tutto il territorio nazionale, con competenze complementari e copertura capillare per ogni tipo di commessa.",
+    description: "37 imprese consorziate con competenze complementari: costruzioni civili e industriali, restauro, infrastrutture, impiantistica tecnologica.",
   },
   {
     icon: Shield,
-    title: "Modello organizzativo",
-    description: "Gestione centralizzata delle commesse con supporto amministrativo, strategico e operativo dedicato a ogni stazione appaltante.",
+    title: "Qualità e sicurezza",
+    description: "Certificazioni ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 e Modello 231/01 dal 2022 per trasparenza e legalità.",
   },
   {
     icon: Award,
-    title: "Qualificazione massima",
-    description: "Classificazione SOA in categorie OG1, OG3, OG11 — il livello più alto per partecipare ad appalti di importo illimitato.",
+    title: "SOA classifica VIII",
+    description: "Attestazione SOA nelle categorie OG1, OG3, OG11 — il livello più alto per partecipare ad appalti di importo illimitato.",
   },
   {
     icon: Zap,
-    title: "Efficienza operativa",
-    description: "Cronoprogrammi rispettati, budget controllati e standard qualitativi elevati in ogni cantiere gestito dal Consorzio.",
+    title: "Ecobonus e Sismabonus",
+    description: "Dal 2019 soluzioni integrate per riduzione del rischio sismico ed efficienza energetica, dalla fattibilità all'esecuzione.",
   },
 ];
 

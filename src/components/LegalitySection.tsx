@@ -4,9 +4,9 @@ import { Scale, AlertTriangle, FileText } from "lucide-react";
 const legalItems = [
   {
     icon: Scale,
-    title: "Modello 231",
+    title: "Modello 231/01",
     description:
-      "Il Consorzio ha adottato un Modello di Organizzazione, Gestione e Controllo ai sensi del D.Lgs. 231/2001 per prevenire la commissione di reati nell'interesse o a vantaggio dell'ente.",
+      "Dal 2022 il Consorzio ha adottato il Modello di Prevenzione, Gestione e Controllo (M.P.G.C.) ex D.lgs. 231/01, volto a prevenire reati e illeciti amministrativi nello svolgimento delle attività aziendali.",
   },
   {
     icon: AlertTriangle,

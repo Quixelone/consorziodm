@@ -4,21 +4,21 @@ import { Building, Landmark, Cpu, ArrowUpRight } from "lucide-react";
 const areas = [
   {
     icon: Landmark,
-    title: "Grandi Infrastrutture",
+    title: "Infrastrutture e opere d'arte",
     description:
-      "Autostrade, viadotti, gallerie, ponti e opere marittime. Progetti infrastrutturali di rilevanza nazionale con piena conformità normativa.",
+      "Manutenzione straordinaria e risanamento strutturale di opere d'arte su tutto il territorio nazionale. Accordi quadro con Anas Spa per importi fino a €50M.",
   },
   {
     icon: Building,
-    title: "Edilizia Pubblica e Sanitaria",
+    title: "Edilizia pubblica e sanitaria",
     description:
-      "Scuole, ospedali, edilizia residenziale pubblica e strutture sportive. Interventi chiavi in mano con attenzione alla sostenibilità.",
+      "Scuole, ospedali, edilizia residenziale pubblica e strutture sportive. Interventi chiavi in mano con attenzione alla sostenibilità e al PNRR.",
   },
   {
     icon: Cpu,
-    title: "Impiantistica ad Alta Tecnologia",
+    title: "Impiantistica e reti idriche",
     description:
-      "Impianti meccanici, elettrici, idraulici e speciali. Soluzioni integrate per l'efficienza energetica e la sicurezza operativa.",
+      "Impianti elettrici, meccanici, idrici e fognari. Distrettualizzazione reti, ricerca perdite e modelli idraulici per gestori come Acea e Acque Veronesi.",
   },
 ];
 

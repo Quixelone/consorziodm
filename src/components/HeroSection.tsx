@@ -29,7 +29,7 @@ const HeroSection = () => (
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
             <ShieldCheck className="h-4 w-4 text-white/90" />
-            <span className="text-xs font-medium text-white/90">Consorzio Stabile — D.Lgs. 36/2023</span>
+            <span className="text-xs font-medium text-white/90">Dal 2013 — Consorzio Stabile S.c.a.r.l.</span>
           </div>
         </motion.div>
 
@@ -53,8 +53,8 @@ const HeroSection = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-white/70 max-w-xl mb-8 leading-relaxed font-light"
         >
-          Capacità operativa, solidità patrimoniale e classificazione SOA VIII:
-          il Consorzio Stabile che le stazioni appaltanti scelgono per le grandi opere.
+          Costruzioni civili e industriali, restauro, infrastrutture e impiantistica.
+          Un soggetto forte e affidabile per commesse di notevole complessità.
         </motion.p>
 
         {/* CTAs */}

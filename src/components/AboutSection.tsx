@@ -57,36 +57,41 @@ const AboutSection = () => (
             Costruiamo il futuro, insieme al territorio.
           </h2>
           <p className="body-lg mb-6">
-            Ogni progetto è molto più di un'opera: è un gesto che dura nel tempo.
-            Ogni impresa è parte di una comunità che mette in rete competenze, passione
-            e visione, trasformando ogni spazio in un luogo da vivere.
+            Il nostro percorso inizia nel 2013, quando un gruppo di imprese ha scelto di non essere
+            semplicemente imprese che costruiscono, ma di diventare una comunità che costruisce insieme.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Il Consorzio Stabile del Mediterraneo S.c.a.r.l. nasce con l'obiettivo di creare una struttura
+            capace di coordinare competenze tecniche, capacità operative e organizzazione, per affrontare
+            in modo solido e strutturato il mercato delle costruzioni civili e industriali, del restauro,
+            delle infrastrutture e dell'impiantistica tecnologica.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-8">
+            La nostra forza non risiede solo nei numeri, ma nel modello organizzativo: il Consorzio
+            centralizza la gestione amministrativa e strategica delle commesse, supporta la partecipazione
+            ad appalti pubblici e privati e coordina le attività operative, lasciando alle imprese
+            associate ciò che sanno fare meglio: costruire.
           </p>
 
           {/* Numbers inline */}
-          <div className="grid grid-cols-2 gap-4 mb-8 p-5 rounded-2xl bg-secondary/50 border border-border/50">
+          <div className="grid grid-cols-2 gap-4 mb-10 p-5 rounded-2xl bg-secondary/50 border border-border/50">
             <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>€100M+</p>
-              <p className="text-xs text-muted-foreground mt-1">Lavori eseguiti</p>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>€200M+</p>
+              <p className="text-xs text-muted-foreground mt-1">Importo lavori realizzati</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>37</p>
               <p className="text-xs text-muted-foreground mt-1">Imprese consorziate</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>50+</p>
-              <p className="text-xs text-muted-foreground mt-1">Cantieri completati</p>
+              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>30+</p>
+              <p className="text-xs text-muted-foreground mt-1">Progetti completati</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>VIII</p>
               <p className="text-xs text-muted-foreground mt-1">Classificazione SOA</p>
             </div>
           </div>
-
-          <p className="text-muted-foreground leading-relaxed mb-10">
-            La nostra forza non risiede solo nei numeri, ma nel modello organizzativo:
-            il Consorzio centralizza la gestione amministrativa e strategica delle commesse,
-            supporta la partecipazione ad appalti pubblici e privati e coordina le attività operative.
-          </p>
 
           {/* Values grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

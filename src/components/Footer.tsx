@@ -17,21 +17,22 @@ const Footer = () => (
             />
           </div>
           <p className="text-sm text-background/40 max-w-sm leading-relaxed mb-6">
-            Consorzio Stabile ai sensi dell'art. 65, comma 2, lett. d) del D.Lgs. 36/2023.
-            Aggregazione strategica di imprese leader nel settore delle costruzioni e delle infrastrutture.
+            Consorzio Stabile del Mediterraneo S.c.a.r.l. — costituito nel 2013.
+            Aggregazione strategica di imprese leader nel settore delle costruzioni civili e industriali,
+            restauro, infrastrutture e impiantistica tecnologica.
           </p>
           <div className="space-y-3">
             <a href="mailto:info@consorziodelmediterraneo.it" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
               <Mail className="h-4 w-4 text-background/30" />
               info@consorziodelmediterraneo.it
             </a>
-            <a href="tel:+390811234567" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
+            <a href="tel:+39081410160" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
               <Phone className="h-4 w-4 text-background/30" />
-              +39 081 123 4567
+              +39 081 410160
             </a>
             <div className="flex items-start gap-3 text-sm text-background/50">
               <MapPin className="h-4 w-4 text-background/30 mt-0.5 shrink-0" />
-              <span>Napoli, Italia</span>
+              <span>Via Dei Mille, 40 — 80121 Napoli (NA)</span>
             </div>
           </div>
         </div>
