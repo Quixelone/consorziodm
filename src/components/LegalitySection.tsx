@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Scale, AlertTriangle, FileText } from "lucide-react";
+import { Scale, AlertTriangle, FileText, ArrowDown } from "lucide-react";
 
 const legalItems = [
   {
@@ -12,7 +12,8 @@ const legalItems = [
     icon: AlertTriangle,
     title: "Whistleblowing",
     description:
-      "Canale di segnalazione dedicato ai sensi del D.Lgs. 24/2023. È possibile segnalare condotte illecite in modo riservato e protetto, garantendo la tutela del segnalante.",
+      "Canale di segnalazione dedicato ai sensi del D.Lgs. 24/2023. Segnala condotte illecite in modo riservato e protetto, con la massima tutela del segnalante.",
+    link: true,
   },
   {
     icon: FileText,
@@ -48,7 +49,22 @@ const LegalitySection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="card-premium p-8 lg:p-10"
+              className={`card-premium p-8 lg:p-10 group ${item.link ? "cursor-pointer hover:border-primary/30" : ""}`}
+              {...(item.link
+                ? {
+                    onClick: () => {
+                      document.getElementById("whistleblowing")?.scrollIntoView({ behavior: "smooth" });
+                    },
+                    role: "button",
+                    tabIndex: 0,
+                    onKeyDown: (e: React.KeyboardEvent) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        document.getElementById("whistleblowing")?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    },
+                  }
+                : {})}
             >
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-primary/5 transition-colors duration-300">
                 <Icon className="h-6 w-6 text-primary" />
@@ -61,6 +77,13 @@ const LegalitySection = () => (
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
+
+              {item.link && (
+                <div className="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold text-primary group-hover:gap-2.5 transition-all">
+                  Vai al canale di segnalazione
+                  <ArrowDown className="h-3.5 w-3.5" />
+                </div>
+              )}
             </motion.div>
           );
         })}

@@ -1,122 +1,143 @@
 import { motion } from "framer-motion";
-import { Shield, Zap, Handshake } from "lucide-react";
 import aboutImg from "@/assets/hero-architecture.webp";
 
-const values = [
-  {
-    icon: Shield,
-    title: "Affidabilità",
-    description: "Garanzie patrimoniali solide e struttura giuridica trasparente a tutela delle stazioni appaltanti.",
-  },
-  {
-    icon: Zap,
-    title: "Efficienza",
-    description: "Un network integrato di competenze consente di mobilitare risorse in tempi record rispettando ogni cronoprogramma.",
-  },
-  {
-    icon: Handshake,
-    title: "Collaborazione",
-    description: "Autonomia e cooperazione si incontrano: ogni impresa porta esperienza e competenze, il Consorzio coordina.",
-  },
+const milestones = [
+  { year: "2013", label: "Fondazione del Consorzio" },
+  { year: "2019", label: "Servizi Ecobonus e Sismabonus" },
+  { year: "2022", label: "Adozione Modello 231/01" },
+  { year: "2023", label: "SOA Classifica VIII — OG1, OG3, OG11" },
+];
+
+const stats = [
+  { value: "€200M+", label: "Valore lavori realizzati" },
+  { value: "37", label: "Imprese consorziate" },
+  { value: "30+", label: "Progetti completati" },
+  { value: "12+", label: "Anni di attività" },
 ];
 
 const AboutSection = () => (
-  <section id="chi-siamo" className="section-spacing">
+  <section id="chi-siamo" className="relative py-24 md:py-32 lg:py-40 bg-white overflow-hidden">
+    {/* Subtle top accent line */}
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
     <div className="section-container">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      {/* Section label + headline */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-4xl mb-20 md:mb-28"
+      >
+        <p className="text-sm font-semibold tracking-widest uppercase text-primary/70 mb-6">
+          Chi siamo
+        </p>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-8" style={{ fontFamily: "var(--font-heading)" }}>
+          Non siamo solo imprese che costruiscono.
+          <br />
+          <span className="text-primary">Siamo una comunità.</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+          <p className="text-lg text-muted-foreground leading-relaxed font-light">
+            Nel <span className="text-foreground font-medium">2013</span>, un gruppo di imprese ha scelto di unire le proprie forze. Il Consorzio Stabile del Mediterraneo S.c.a.r.l. coordina competenze tecniche, capacità operative e organizzazione per affrontare il mercato delle costruzioni civili e industriali, del restauro, delle infrastrutture e dell'impiantistica tecnologica.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed font-light">
+            Il Consorzio centralizza la gestione, coordina le attività operative, lasciando alle imprese associate ciò che sanno fare meglio: <span className="text-foreground font-medium">costruire</span>. Con una classificazione SOA di <span className="text-foreground font-medium">VIII livello</span> e oltre <span className="text-foreground font-medium">€200 milioni</span> di lavori realizzati.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Image + Stats */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-24 md:mb-32">
         {/* Image */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative order-2 lg:order-1"
+          className="lg:col-span-7 relative"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-elevated">
+          <div className="aspect-[16/10] rounded-2xl overflow-hidden bg-muted">
             <img
               src={aboutImg}
-              alt="Cantiere e infrastrutture"
-              className="w-full aspect-[4/3] object-cover"
-              width={800}
-              height={600}
-              loading="lazy"
+              alt="Infrastrutture e cantieri CDM"
+              className="w-full h-full object-cover"
+              width={1200}
+              height={750}
             />
           </div>
+          {/* Caption */}
+          <p className="text-xs text-muted-foreground mt-4 font-medium tracking-wide">
+            CONSorzio stabile del mediterraneo — dal 2013
+          </p>
         </motion.div>
 
-        {/* Text + Values */}
+        {/* Stats column */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="order-1 lg:order-2"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="lg:col-span-5 flex flex-col justify-center"
         >
-          <p className="heading-section mb-4">Chi siamo</p>
-          <h2 className="heading-lg mb-6">
-            Costruiamo il futuro, insieme al territorio.
-          </h2>
-          <p className="body-lg mb-6">
-            Il nostro percorso inizia nel 2013, quando un gruppo di imprese ha scelto di non essere
-            semplicemente imprese che costruiscono, ma di diventare una comunità che costruisce insieme.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            Il Consorzio Stabile del Mediterraneo S.c.a.r.l. nasce con l'obiettivo di creare una struttura
-            capace di coordinare competenze tecniche, capacità operative e organizzazione, per affrontare
-            in modo solido e strutturato il mercato delle costruzioni civili e industriali, del restauro,
-            delle infrastrutture e dell'impiantistica tecnologica.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            La nostra forza non risiede solo nei numeri, ma nel modello organizzativo: il Consorzio
-            centralizza la gestione amministrativa e strategica delle commesse, supporta la partecipazione
-            ad appalti pubblici e privati e coordina le attività operative, lasciando alle imprese
-            associate ciò che sanno fare meglio: costruire.
-          </p>
-
-          {/* Numbers inline */}
-          <div className="grid grid-cols-2 gap-4 mb-10 p-5 rounded-2xl bg-secondary/50 border border-border/50">
-            <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>€200M+</p>
-              <p className="text-xs text-muted-foreground mt-1">Importo lavori realizzati</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>37</p>
-              <p className="text-xs text-muted-foreground mt-1">Imprese consorziate</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>30+</p>
-              <p className="text-xs text-muted-foreground mt-1">Progetti completati</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: "var(--font-mono)" }}>VIII</p>
-              <p className="text-xs text-muted-foreground mt-1">Classificazione SOA</p>
-            </div>
-          </div>
-
-          {/* Values grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {values.map((v, i) => {
-              const Icon = v.icon;
-              return (
-                <motion.div
-                  key={v.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex flex-col items-center text-center p-5 rounded-2xl hover:bg-secondary/50 transition-colors duration-300"
+          <div className="grid grid-cols-2 gap-px bg-border/50 rounded-2xl overflow-hidden">
+            {stats.map((stat, i) => (
+              <div key={stat.label} className="bg-white p-6 md:p-8 group hover:bg-muted/50 transition-colors">
+                <p
+                  className="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-foreground"
+                  style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-3">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground text-sm mb-1">{v.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{v.description}</p>
-                </motion.div>
-              );
-            })}
+                  {stat.value}
+                </p>
+                <p className="text-xs text-muted-foreground leading-snug">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
+
+      {/* Timeline */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl"
+      >
+        <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-10">
+          Tappe fondamentali
+        </p>
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-3 top-0 bottom-0 w-px bg-border" />
+
+          <div className="space-y-8">
+            {milestones.map((m, i) => (
+              <motion.div
+                key={m.year}
+                initial={{ opacity: 0, x: -15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="relative flex items-baseline gap-6 pl-10"
+              >
+                {/* Dot */}
+                <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-white border-2 border-primary flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                </div>
+
+                <span
+                  className="text-sm font-bold text-primary shrink-0"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  {m.year}
+                </span>
+                <span className="text-muted-foreground">{m.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </div>
   </section>
 );

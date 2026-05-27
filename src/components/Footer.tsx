@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Printer } from "lucide-react";
 import logoFull from "@/assets/new-logo.png";
 
 const Footer = () => (
@@ -26,10 +26,14 @@ const Footer = () => (
               <Mail className="h-4 w-4 text-background/30" />
               info@consorziodelmediterraneo.it
             </a>
-            <a href="tel:+39081410160" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
+            <a href="tel:+39081400051" className="flex items-center gap-3 text-sm text-background/50 hover:text-background transition-colors">
               <Phone className="h-4 w-4 text-background/30" />
-              +39 081 410160
+              +39 081 400051
             </a>
+            <span className="flex items-center gap-3 text-sm text-background/30">
+              <Printer className="h-4 w-4 text-background/20" />
+              Fax 081 2520128
+            </span>
             <div className="flex items-start gap-3 text-sm text-background/50">
               <MapPin className="h-4 w-4 text-background/30 mt-0.5 shrink-0" />
               <span>Via Dei Mille, 40 — 80121 Napoli (NA)</span>

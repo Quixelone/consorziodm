@@ -127,12 +127,13 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground">80121 Napoli (NA)</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+<div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shrink-0">
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">+39 081 410160</p>
+                  <p className="text-sm font-semibold text-foreground">+39 081 400051</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Fax: 081 2520128</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
