@@ -5,7 +5,7 @@ const pillars = [
   {
     icon: Network,
     title: "Rete integrata",
-    description: "37 imprese consorziate con competenze complementari: costruzioni civili e industriali, restauro, infrastrutture, impiantistica tecnologica.",
+    description: "40 imprese consorziate con competenze complementari: costruzioni civili e industriali, restauro, infrastrutture, impiantistica tecnologica.",
   },
   {
     icon: Shield,
@@ -15,7 +15,7 @@ const pillars = [
   {
     icon: Award,
     title: "SOA classifica VIII",
-    description: "Attestazione SOA nelle categorie OG1, OG3, OG11 — il livello più alto per partecipare ad appalti di importo illimitato.",
+    description: "Attestazione SOA con classifiche elevate nelle principali categorie OG e OS — il livello più alto per partecipare ad appalti di importo illimitato.",
   },
   {
     icon: Zap,
