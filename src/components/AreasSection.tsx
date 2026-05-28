@@ -18,7 +18,7 @@ const areas = [
     icon: Cpu,
     title: "Impiantistica e reti idriche",
     description:
-      "Impianti elettrici, meccanici, idrici e fognari. Distrettualizzazione reti, ricerca perdite e modelli idraulici per gestori come Acea e Acque Veronesi.",
+      "Impianti elettrici, meccanici, idrici e fognari. Distrettualizzazione reti, ricerca perdite e modelli idraulici per gestori come Piave Servizi, Acea e Acque Veronesi.",
   },
 ];
 

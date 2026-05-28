@@ -34,8 +34,8 @@ function useCountUp(target: number, duration = 2200) {
 }
 
 const NumbersSection = () => {
-  const kpi1 = useCountUp(100);
-  const kpi2 = useCountUp(37);
+  const kpi1 = useCountUp(120);
+  const kpi2 = useCountUp(40);
   const kpi3 = useCountUp(50);
 
   return (

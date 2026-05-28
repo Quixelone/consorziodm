@@ -9,9 +9,9 @@ const milestones = [
 ];
 
 const stats = [
-  { value: "€200M+", label: "Valore lavori realizzati" },
-  { value: "37", label: "Imprese consorziate" },
-  { value: "30+", label: "Progetti completati" },
+  { value: "€120M+", label: "Valore lavori realizzati" },
+  { value: "40", label: "Imprese consorziate" },
+  { value: "50+", label: "Progetti completati" },
   { value: "12+", label: "Anni di attività" },
 ];
 
@@ -42,7 +42,7 @@ const AboutSection = () => (
             Nel <span className="text-foreground font-medium">2013</span>, un gruppo di imprese ha scelto di unire le proprie forze. Il Consorzio Stabile del Mediterraneo S.c.a.r.l. coordina competenze tecniche, capacità operative e organizzazione per affrontare il mercato delle costruzioni civili e industriali, del restauro, delle infrastrutture e dell'impiantistica tecnologica.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed font-light">
-            Il Consorzio centralizza la gestione, coordina le attività operative, lasciando alle imprese associate ciò che sanno fare meglio: <span className="text-foreground font-medium">costruire</span>. Con una classificazione SOA di <span className="text-foreground font-medium">VIII livello</span> e oltre <span className="text-foreground font-medium">€200 milioni</span> di lavori realizzati.
+            Il Consorzio centralizza la gestione, coordina le attività operative, lasciando alle imprese associate ciò che sanno fare meglio: <span className="text-foreground font-medium">La realizzazione dell'opera</span>. Attestazione SOA ad ampia copertura, con classifiche elevate nelle principali categorie OG e OS e qualificazione massima <span className="text-foreground font-medium">VIII</span> in più categorie strategiche dei lavori pubblici.
           </p>
         </div>
       </motion.div>
