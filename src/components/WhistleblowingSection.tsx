@@ -20,7 +20,7 @@ const features = [
   },
 ];
 
-const WhistleblowingSection = () => {
+const WhistleblowingSection = ({ show }: { show: boolean }) => {
   const [isAnonymous, setIsAnonymous] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -34,6 +34,8 @@ const WhistleblowingSection = () => {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  if (!show) return null;
 
   if (submitted) {
     return (

@@ -23,7 +23,7 @@ const legalItems = [
   },
 ];
 
-const LegalitySection = () => (
+const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => (
   <section id="legalita" className="section-spacing">
     <div className="section-container">
       <motion.div
@@ -53,14 +53,14 @@ const LegalitySection = () => (
               {...(item.link
                 ? {
                     onClick: () => {
-                      document.getElementById("whistleblowing")?.scrollIntoView({ behavior: "smooth" });
+                      onShowWhistleblowing?.();
                     },
                     role: "button",
                     tabIndex: 0,
                     onKeyDown: (e: React.KeyboardEvent) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        document.getElementById("whistleblowing")?.scrollIntoView({ behavior: "smooth" });
+                        onShowWhistleblowing?.();
                       }
                     },
                   }

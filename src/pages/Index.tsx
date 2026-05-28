@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PillarsSection from "@/components/PillarsSection";
@@ -13,25 +14,36 @@ import WhistleblowingSection from "@/components/WhistleblowingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = () => (
-  <>
-    <Navbar />
-    <main>
-      <HeroSection />
-      <PillarsSection />
-      <AboutSection />
-      <MissionVisionSection />
-      <AreasSection />
-      <TabsSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <CertificationsSection />
-      <LegalitySection />
-      <WhistleblowingSection />
-      <ContactSection />
-    </main>
-    <Footer />
-  </>
-);
+const Index = () => {
+  const [showWhistleblowing, setShowWhistleblowing] = useState(false);
+
+  const handleShowWhistleblowing = () => {
+    setShowWhistleblowing(true);
+    setTimeout(() => {
+      document.getElementById("whistleblowing")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <PillarsSection />
+        <AboutSection />
+        <MissionVisionSection />
+        <AreasSection />
+        <TabsSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <CertificationsSection />
+        <LegalitySection onShowWhistleblowing={handleShowWhistleblowing} />
+        <WhistleblowingSection show={showWhistleblowing} />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Index;
