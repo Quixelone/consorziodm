@@ -76,7 +76,11 @@ const Navbar = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void })
             <button
               key={l.label}
               onClick={() => handleNavClick(l.hash)}
-              className="px-3.5 py-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50 bg-transparent border-none cursor-pointer"
+              className={`px-3.5 py-2 text-[13px] font-medium transition-colors rounded-lg bg-transparent border-none cursor-pointer ${
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`}
             >
               {l.label}
             </button>
@@ -89,7 +93,9 @@ const Navbar = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void })
           </button>
 
           <button
-            className="lg:hidden p-2 text-foreground rounded-lg hover:bg-secondary/50 transition-colors"
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              scrolled ? "text-foreground hover:bg-secondary/50" : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setOpen(!open)}
             aria-label={open ? "Chiudi menu" : "Apri menu"}
             aria-expanded={open}
