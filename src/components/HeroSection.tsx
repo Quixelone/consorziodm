@@ -53,8 +53,9 @@ const HeroSection = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-white/70 max-w-xl mb-8 leading-relaxed font-light"
         >
-          Costruzioni civili e industriali, restauro, infrastrutture e impiantistica.
-          Un soggetto forte e affidabile per commesse di notevole complessità.
+          Un soggetto consortile qualificato per la gestione di appalti pubblici, accordi quadro e commesse 
+          complesse nei settori dell’edilizia, 
+          del restauro, delle infrastrutture e dell’impiantistica.
         </motion.p>
 
         {/* CTAs */}

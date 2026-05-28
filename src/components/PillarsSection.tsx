@@ -15,12 +15,12 @@ const pillars = [
   {
     icon: Award,
     title: "SOA classifica VIII",
-    description: "Attestazione SOA con classifiche elevate nelle principali categorie OG e OS — il livello più alto per partecipare ad appalti di importo illimitato.",
+    description: "Attestazione Soa con qualificazione illimitata nelle categorie OG1, OG3, OG6 e OG12, oltre a classifiche elevate nelle principali categorie generali e specialistiche",
   },
   {
     icon: Zap,
     title: "Ecobonus e Sismabonus",
-    description: "Dal 2019 soluzioni integrate per riduzione del rischio sismico ed efficienza energetica, dalla fattibilità all'esecuzione.",
+    description: "Dal 2019 il Consorzio opera nel settore degli interventi agevolati per il miglioramento sismico e la riqualificazione energetica degli edifici, curando le attività tecniche, organizzative ed esecutive connesse alla realizzazione dei lavori.",
   },
 ];
 

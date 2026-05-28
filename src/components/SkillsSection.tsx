@@ -78,8 +78,8 @@ const SkillsSection = () => (
             Competenze certificate e misurabili.
           </h2>
           <p className="body-lg max-w-md">
-            Le nostre categorie SOA e le qualificazioni dimostrano la capacità operativa
-            del Consorzio in ogni ambito di intervento.
+            La struttura consortile consente di operare in diversi settori dei lavori pubblici, 
+            integrando capacità tecnica, organizzazione d’impresa e gestione di commesse complesse.
           </p>
         </motion.div>
 
