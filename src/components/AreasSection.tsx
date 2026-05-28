@@ -1,24 +1,30 @@
 import { motion } from "framer-motion";
-import { Building, Landmark, Cpu, ArrowUpRight } from "lucide-react";
+import { Building, Landmark, Cpu, Settings, ArrowUpRight } from "lucide-react";
 
 const areas = [
   {
     icon: Landmark,
+    title: "Restauro e beni culturali",
+    description:
+      "Interventi di restauro, recupero e valorizzazione di edifici storici, complessi monumentali e beni sottoposti a tutela, con qualificazione SOA OG2 e capacità operativa nella gestione di commesse pubbliche complesse.",
+  },
+  {
+    icon: Settings,
     title: "Infrastrutture e opere d'arte",
     description:
-      "Manutenzione straordinaria e risanamento strutturale di opere d'arte su tutto il territorio nazionale. Accordi quadro con Anas Spa per importi fino a €50M.",
+      "Manutenzione straordinaria, consolidamento e risanamento strutturale di infrastrutture, ponti, viabilità e opere d'arte, anche mediante accordi quadro e appalti di rilevante importo.",
   },
   {
     icon: Building,
-    title: "Edilizia pubblica e sanitaria",
+    title: "Edilizia pubblica, sanitaria e scolastica",
     description:
-      "Scuole, ospedali, edilizia residenziale pubblica e strutture sportive. Interventi chiavi in mano con attenzione alla sostenibilità e al PNRR.",
+      "Realizzazione, adeguamento e riqualificazione di edifici pubblici, strutture sanitarie, scolastiche, sportive e residenziali, con esperienza in appalti integrati e programmi finanziati da fondi pubblici e PNRR.",
   },
   {
     icon: Cpu,
-    title: "Impiantistica e reti idriche",
+    title: "Impianti e reti tecnologiche",
     description:
-      "Impianti elettrici, meccanici, idrici e fognari. Distrettualizzazione reti, ricerca perdite e modelli idraulici per gestori come Piave Servizi, Acea e Acque Veronesi.",
+      "Esecuzione e manutenzione di impianti elettrici, meccanici, idrici e fognari, reti tecnologiche e sistemi infrastrutturali, con attività di adeguamento, gestione e riqualificazione funzionale.",
   },
 ];
 
@@ -38,7 +44,7 @@ const AreasSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {areas.map((area, i) => {
           const Icon = area.icon;
           return (
