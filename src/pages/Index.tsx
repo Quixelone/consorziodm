@@ -26,7 +26,7 @@ const Index = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar onShowWhistleblowing={handleShowWhistleblowing} />
       <main>
         <HeroSection />
         <PillarsSection />
@@ -41,7 +41,7 @@ const Index = () => {
         <WhistleblowingSection show={showWhistleblowing} />
         <ContactSection />
       </main>
-      <Footer />
+      <Footer onShowWhistleblowing={handleShowWhistleblowing} />
     </>
   );
 };

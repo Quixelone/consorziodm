@@ -15,7 +15,7 @@ const navLinks = [
   { label: "Contatti", hash: "contatti" },
 ] as const;
 
-const Navbar = () => {
+const Navbar = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -34,11 +34,14 @@ const Navbar = () => {
 
   const handleNavClick = (hash: string) => {
     setOpen(false);
+    if (hash === "whistleblowing") {
+      onShowWhistleblowing?.();
+      return;
+    }
     if (location.pathname === "/") {
       scrollToHash(hash);
     } else {
       navigate("/", { replace: false });
-      // Wait for homepage to mount, then scroll
       setTimeout(() => scrollToHash(hash), 300);
     }
   };

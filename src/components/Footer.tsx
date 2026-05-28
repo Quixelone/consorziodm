@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Printer } from "lucide-react";
 import logoFull from "@/assets/new-logo.png";
 
-const Footer = () => (
+const scrollToHash = (hash: string) => {
+  const el = document.getElementById(hash);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
+const Footer = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => (
   <footer className="bg-foreground text-background">
     <div className="section-container py-16 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
@@ -48,17 +53,21 @@ const Footer = () => (
           </h4>
           <nav aria-label="Footer" className="flex flex-col gap-2.5">
             {[
-              { l: "Home", h: "#home" },
-              { l: "Chi Siamo", h: "#chi-siamo" },
-              { l: "Competenze", h: "#competenze" },
-              { l: "Lavori", h: "#lavori" },
-              { l: "Certificazioni", h: "#certificazioni" },
-              { l: "Legalità", h: "#legalita" },
-              { l: "Contatti", h: "#contatti" },
+              { l: "Home", h: "home" },
+              { l: "Chi Siamo", h: "chi-siamo" },
+              { l: "Competenze", h: "competenze" },
+              { l: "Lavori", h: "lavori" },
+              { l: "Certificazioni", h: "certificazioni" },
+              { l: "Legalità", h: "legalita" },
+              { l: "Contatti", h: "contatti" },
             ].map((link) => (
-              <a key={link.l} href={link.h} className="text-sm text-background/50 hover:text-background transition-colors">
+              <button
+                key={link.l}
+                onClick={() => scrollToHash(link.h)}
+                className="text-sm text-background/50 hover:text-background transition-colors bg-transparent border-none cursor-pointer text-left"
+              >
                 {link.l}
-              </a>
+              </button>
             ))}
           </nav>
         </div>
@@ -77,9 +86,15 @@ const Footer = () => (
                 {l}
               </span>
             ))}
-            <a href="#whistleblowing" className="text-sm text-background/50 hover:text-background transition-colors">
+            <button
+              onClick={() => {
+                onShowWhistleblowing?.();
+                setTimeout(() => scrollToHash("whistleblowing"), 150);
+              }}
+              className="text-sm text-background/50 hover:text-background transition-colors bg-transparent border-none cursor-pointer text-left"
+            >
               Whistleblowing
-            </a>
+            </button>
             <span className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
               Amm. Trasparente
             </span>
