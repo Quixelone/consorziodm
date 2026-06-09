@@ -27,7 +27,7 @@ const services = [
     label: "Manutenzione",
     title: "Manutenzione programmata",
     description: "Manutenzione ordinaria e straordinaria per edifici pubblici e privati, impianti e infrastrutture.",
-    img: "https://images.unsplash.com/photo-1581578731548-c645d0d7c461?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.pexels.com/photos/5854175/pexels-photo-5854175.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
 ];
 
