@@ -6,28 +6,28 @@ const services = [
     label: "Soluzioni",
     title: "Soluzioni su misura",
     description: "Servizi integrati di progettazione, direzione lavori, sicurezza e gestione commesse.",
-    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/SEZIONE-1-HOME-n.-3-1-1-scaled-uai-900x506.jpg",
+    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "progetti",
     label: "Progetti",
     title: "Dalla progettazione alla realizzazione",
     description: "Gestiamo l'intero ciclo di vita del progetto: dall'analisi di fattibilità alla consegna dell'opera.",
-    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/SEZIONE-1-HOME-n.-2-1-819x1024.jpg",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "esecuzione",
     label: "Esecuzione",
     title: "Esecuzione impeccabile",
     description: "Cantieri gestiti con metodologie avanzate di project management, rispetto di budget e cronoprogramma.",
-    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/bertholdbrodersen-contract-3031680-1024x683.jpg",
+    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "manutenzione",
     label: "Manutenzione",
     title: "Manutenzione programmata",
     description: "Manutenzione ordinaria e straordinaria per edifici pubblici e privati, impianti e infrastrutture.",
-    img: "https://www.consorziodelmediterraneo.it/wp-content/uploads/2026/03/dayamay-window-cleaner-4306918-683x1024.jpg",
+    img: "https://images.unsplash.com/photo-1581578731548-c645d0d7c461?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
