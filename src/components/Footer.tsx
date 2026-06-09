@@ -61,13 +61,13 @@ const Footer = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void })
               { l: "Legalità", h: "legalita" },
               { l: "Contatti", h: "contatti" },
             ].map((link) => (
-              <button
+              <a
+                href={`/#${link.h}`}
                 key={link.l}
-                onClick={() => scrollToHash(link.h)}
-                className="text-sm text-background/50 hover:text-background transition-colors bg-transparent border-none cursor-pointer text-left"
+                className="text-sm text-background/50 hover:text-background transition-colors"
               >
                 {link.l}
-              </button>
+              </a>
             ))}
           </nav>
         </div>
@@ -81,11 +81,12 @@ const Footer = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void })
             <Link to="/privacy" className="text-sm text-background/50 hover:text-background transition-colors">
               Privacy Policy
             </Link>
-            {["Cookie Policy", "Modello 231"].map((l) => (
-              <span key={l} className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
-                {l}
-              </span>
-            ))}
+            <Link to="/cookie-policy" className="text-sm text-background/50 hover:text-background transition-colors">
+              Cookie Policy
+            </Link>
+            <span className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
+              Modello 231
+            </span>
             <button
               onClick={() => {
                 onShowWhistleblowing?.();

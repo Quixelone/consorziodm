@@ -72,7 +72,7 @@ L'interessato ha altresì il diritto di proporre reclamo al Garante per la Prote
     title: "7. Cookie e Tecnologie di Tracciamento",
     content: `Il sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento delle pagine. Non vengono utilizzati cookie di profilazione o di tracciamento di terze parti senza il preventivo consenso dell'utente.
 
-Per informazioni dettagliate sulle tipologie di cookie utilizzate e sulle relative modalità di gestione, si rimanda alla Cookie Policy del sito.`,
+Per informazioni dettagliate sulle tipologie di cookie utilizzate e sulle relative modalità di gestione, si rimanda alla <a href="/cookie-policy" class="underline hover:no-underline">Cookie Policy</a> del sito.`,
   },
   {
     title: "8. Modifiche alla Presente Informativa",

@@ -53,8 +53,8 @@ const HeroSection = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-white/70 max-w-xl mb-8 leading-relaxed font-light"
         >
-          Un soggetto consortile qualificato per la gestione di appalti pubblici, accordi quadro e commesse 
-          complesse nei settori dell’edilizia, 
+          Un soggetto consortile qualificato per la gestione di appalti pubblici, accordi quadro e commesse
+          complesse nei settori dell’edilizia,
           del restauro, delle infrastrutture e dell’impiantistica.
         </motion.p>
 
@@ -66,11 +66,11 @@ const HeroSection = () => (
           className="flex flex-wrap gap-4"
         >
           <a href="#contatti" className="inline-flex items-center gap-2 bg-white text-black rounded-full px-7 py-3 text-sm font-semibold hover:bg-white/90 transition-all duration-200 shadow-lg">
-            Richiedi Qualificazione
+            Contattaci
             <ArrowRight className="h-4 w-4" />
           </a>
           <a href="#lavori" className="inline-flex items-center gap-2 border-2 border-white/30 text-white rounded-full px-7 py-3 text-sm font-semibold hover:bg-white/10 transition-all duration-200">
-            Scopri le Referenze
+            Scopri di più
           </a>
         </motion.div>
       </div>

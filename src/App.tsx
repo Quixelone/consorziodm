@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Projects from "./pages/Projects.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import CookiePolicy from "./pages/CookiePolicy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/progetti" element={<Projects />} />
           <Route path="/progetti/:slug" element={<ProjectDetail />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
