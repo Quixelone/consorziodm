@@ -1,36 +1,72 @@
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, MapPin, Mail, Phone } from "lucide-react";
-
-const CONTACT_EMAIL = "info@consorziodelmediterraneo.it";
+import { Send, MapPin, Mail, Phone, CheckCircle2, Loader2 } from "lucide-react";
 
 const ContactSection = () => {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("loading");
 
     const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") || "");
-    const company = String(form.get("company") || "");
-    const entityType = String(form.get("entityType") || "");
-    const email = String(form.get("email") || "");
-    const message = String(form.get("message") || "");
-    const body = [
-      `Nome e Cognome: ${name}`,
-      `Azienda / Ente: ${company || "-"}`,
-      `Tipologia Ente: ${entityType || "-"}`,
-      `Email / PEC: ${email}`,
-      "",
-      "Messaggio:",
-      message || "-",
-    ].join("\n");
+    const payload = {
+      type: "contact",
+      name: String(form.get("name") || ""),
+      company: String(form.get("company") || ""),
+      entityType: String(form.get("entityType") || ""),
+      email: String(form.get("email") || ""),
+      message: String(form.get("message") || ""),
+    };
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      "Richiesta dal sito Consorzio Stabile del Mediterraneo",
-    )}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
+
+  if (status === "success") {
+    return (
+      <section id="contatti" className="section-spacing">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-2xl mx-auto text-center card-premium p-12 md:p-16"
+          >
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle2 className="h-8 w-8 text-green-600" />
+            </div>
+            <h3 className="heading-lg mb-4">Messaggio inviato</h3>
+            <p className="body-lg max-w-md mx-auto text-muted-foreground">
+              Grazie per averci contattato. Il nostro team risponderà il prima possibile.
+            </p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="btn-primary mt-8"
+            >
+              Invia un altro messaggio
+            </button>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
 
   return (
   <section id="contatti" className="section-spacing">
@@ -101,9 +137,22 @@ const ContactSection = () => {
             </Label>
             <Textarea id="message" name="message" placeholder="Descrivete la vostra necessità..." rows={4} className="rounded-xl border-border/80 resize-none" />
           </div>
-          <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
-            <Send className="h-4 w-4" />
-            Invia Richiesta
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60"
+          >
+            {status === "loading" ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Invio in corso...
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4" />
+                Invia Richiesta
+              </>
+            )}
           </button>
         </motion.form>
 
@@ -141,7 +190,7 @@ const ContactSection = () => {
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{CONTACT_EMAIL}</p>
+                  <p className="text-sm font-semibold text-foreground">info@consorziodelmediterraneo.it</p>
                   <p className="text-xs text-muted-foreground mt-0.5">PEC: consorziodelmediterraneo@pec.it</p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Shield, Lock, Eye, Send, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Shield, Lock, Eye, Send, AlertTriangle, CheckCircle2, Loader2 } from "lucide-react";
 
 const features = [
   {
@@ -23,6 +23,7 @@ const features = [
 const WhistleblowingSection = ({ show }: { show: boolean }) => {
   const [isAnonymous, setIsAnonymous] = useState(true);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     category: "",
     description: "",
@@ -30,9 +31,32 @@ const WhistleblowingSection = ({ show }: { show: boolean }) => {
     email: "",
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "whistleblowing",
+          isAnonymous,
+          category: formData.category,
+          description: formData.description,
+          name: isAnonymous ? "" : formData.name,
+          email: isAnonymous ? "" : formData.email,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Whistleblowing send error:", error);
+    } finally {
+      setSending(false);
+    }
   };
 
   if (!show) return null;
@@ -223,10 +247,20 @@ const WhistleblowingSection = ({ show }: { show: boolean }) => {
 
               <button
                 type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                disabled={sending}
+                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60"
               >
-                <Send className="h-4 w-4" />
-                {isAnonymous ? "Invia segnalazione anonima" : "Invia segnalazione"}
+                {sending ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Invio in corso...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    {isAnonymous ? "Invia segnalazione anonima" : "Invia segnalazione"}
+                  </>
+                )}
               </button>
 
               <p className="text-xs text-muted-foreground text-center">

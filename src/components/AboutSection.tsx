@@ -12,7 +12,7 @@ const stats = [
   { value: "€120M+", label: "Valore lavori realizzati" },
   { value: "40", label: "Imprese consorziate" },
   { value: "50+", label: "Progetti completati" },
-  { value: "12+", label: "Anni di attività" },
+  { value: "13+", label: "Anni di attività" },
 ];
 
 const AboutSection = () => (
@@ -68,7 +68,7 @@ const AboutSection = () => (
           </div>
           {/* Caption */}
           <p className="text-xs text-muted-foreground mt-4 font-medium tracking-wide">
-            CONSorzio stabile del mediterraneo — dal 2013
+            Consorzio stabile del mediterraneo — dal 2013
           </p>
         </motion.div>
 

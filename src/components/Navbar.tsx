@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Certificazioni", hash: "certificazioni" },
   { label: "Legalità", hash: "legalita" },
   { label: "Whistleblowing", hash: "whistleblowing" },
-  { label: "Contatti", hash: "contatti" },
 ] as const;
 
 const Navbar = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => {
