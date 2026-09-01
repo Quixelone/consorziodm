@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Scale, AlertTriangle, FileText, ArrowDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Scale, AlertTriangle, FileText, Leaf, ArrowDown } from "lucide-react";
 
 const legalItems = [
   {
@@ -21,9 +22,18 @@ const legalItems = [
     description:
       "Il nostro Codice Etico definisce i principi e le regole di comportamento che guidano tutte le attività del Consorzio, delle imprese consorziate e dei collaboratori.",
   },
+  {
+    icon: Leaf,
+    title: "Ambiente e Salute/Sicurezza",
+    description:
+      "Il Consorzio applica la propria Politica Ambientale e di Salute e Sicurezza sul Lavoro, impegnandosi al rispetto della normativa vigente e al miglioramento continuo delle prestazioni ambientali e di sicurezza.",
+    page: "/ambiente-sicurezza",
+  },
 ];
 
-const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => (
+const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void }) => {
+  const navigate = useNavigate();
+  return (
   <section id="legalita" className="section-spacing">
     <div className="section-container">
       <motion.div
@@ -49,22 +59,24 @@ const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`card-premium p-8 lg:p-10 group ${item.link ? "cursor-pointer hover:border-primary/30" : ""}`}
-              {...(item.link
-                ? {
-                    onClick: () => {
-                      onShowWhistleblowing?.();
-                    },
-                    role: "button",
-                    tabIndex: 0,
-                    onKeyDown: (e: React.KeyboardEvent) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        onShowWhistleblowing?.();
-                      }
-                    },
-                  }
-                : {})}
+               className={`card-premium p-8 lg:p-10 group ${(item.link || item.page) ? "cursor-pointer hover:border-primary/30" : ""}`}
+               {...((item.link || item.page)
+                 ? {
+                     onClick: () => {
+                       if (item.page) navigate(item.page);
+                       else onShowWhistleblowing?.();
+                     },
+                     role: "button",
+                     tabIndex: 0,
+                     onKeyDown: (e: React.KeyboardEvent) => {
+                       if (e.key === "Enter" || e.key === " ") {
+                         e.preventDefault();
+                         if (item.page) navigate(item.page);
+                         else onShowWhistleblowing?.();
+                       }
+                     },
+                   }
+                 : {})}
             >
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-primary/5 transition-colors duration-300">
                 <Icon className="h-6 w-6 text-primary" />
@@ -84,6 +96,12 @@ const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () =
                   <ArrowDown className="h-3.5 w-3.5" />
                 </div>
               )}
+              {item.page && (
+                <div className="inline-flex items-center gap-1.5 mt-4 text-xs font-semibold text-primary group-hover:gap-2.5 transition-all">
+                  Scopri di più
+                  <ArrowDown className="h-3.5 w-3.5" />
+                </div>
+              )}
             </motion.div>
           );
         })}
@@ -91,5 +109,6 @@ const LegalitySection = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () =
     </div>
   </section>
 );
+};
 
 export default LegalitySection;

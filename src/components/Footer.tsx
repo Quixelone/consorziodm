@@ -87,6 +87,9 @@ const Footer = ({ onShowWhistleblowing }: { onShowWhistleblowing?: () => void })
             <span className="text-sm text-background/30 cursor-not-allowed" aria-disabled="true">
               Modello 231
             </span>
+            <Link to="/ambiente-sicurezza" className="text-sm text-background/50 hover:text-background transition-colors">
+              Ambiente e Salute/Sicurezza
+            </Link>
             <button
               onClick={() => {
                 onShowWhistleblowing?.();
