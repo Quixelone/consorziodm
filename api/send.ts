@@ -3,6 +3,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const TO_EMAIL = "info@consorziodelmediterraneo.it";
+const WHISTLEBLOWING_EMAIL = "odvcdmscarl@gmail.com";
 const FROM_EMAIL = "onboarding@resend.dev";
 
 export default async function handler(req: Request) {
@@ -40,7 +41,7 @@ export default async function handler(req: Request) {
 
       await resend.emails.send({
         from: `Consorzio DM - WB <${FROM_EMAIL}>`,
-        to: [TO_EMAIL],
+        to: [WHISTLEBLOWING_EMAIL],
         subject: "⚠️ Segnalazione Whistleblowing",
         html: `
           <h2 style="color:#dc2626;">Segnalazione Whistleblowing</h2>
