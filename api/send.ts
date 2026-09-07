@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const TO_EMAIL = "info@consorziodelmediterraneo.it";
 const WHISTLEBLOWING_EMAIL = "odvcdmscarl@gmail.com";
-const FROM_EMAIL = "onboarding@resend.dev";
+const FROM_EMAIL = "noreply@consorziodelmediterraneo.it";
 
 export default async function handler(req: Request) {
   if (req.method !== "POST") {
