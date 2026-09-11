@@ -11,6 +11,8 @@ import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import CookiePolicy from "./pages/CookiePolicy.tsx";
 import EnvironmentSafetyPolicy from "./pages/EnvironmentSafetyPolicy.tsx";
+import VerificaSegnalazione from "./pages/VerificaSegnalazione.tsx";
+import Riservata from "./pages/Riservata.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/ambiente-sicurezza" element={<EnvironmentSafetyPolicy />} />
+          <Route path="/verifica-segnalazione" element={<VerificaSegnalazione />} />
+          <Route path="/riservata" element={<Riservata />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

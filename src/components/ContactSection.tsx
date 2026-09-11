@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send, MapPin, Mail, Phone, CheckCircle2, Loader2 } from "lucide-react";
+import { EMAIL_API_URL } from "@/lib/api";
 
 const ContactSection = () => {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -23,7 +24,7 @@ const ContactSection = () => {
     };
 
     try {
-      const res = await fetch("/api/send", {
+      const res = await fetch(EMAIL_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
